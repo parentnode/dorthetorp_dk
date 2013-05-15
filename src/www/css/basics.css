@@ -1,0 +1,93 @@
+* {
+   font-family: verdana;
+   font-size: 12px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #E3EEEE url(../img/bg.gif);
+	color: #000000;
+	margin: 0;
+	padding: 25px 0 25px 50px;
+	z-index: 1;
+	text-align: left;
+}
+
+div#pageWrap {
+	position: relative;
+	width: 650px;
+}
+div#headerWrap {
+	overflow: hidden;
+	height: 81px;
+	margin: 0 0 30px;
+}
+div#headerWrap .fleft img {
+	margin-top: 41px;
+}
+
+div#menuWrap {
+	float: left;
+	width: 150px;
+}
+div#menuWrap ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+div#menuWrap li {
+	margin: 0;
+	line-height: 16px;
+	padding: 0 0 8px;
+}
+div#menuWrap li.separator {
+	padding: 0 0 15px;
+}
+div#menuWrap li a {text-transform: uppercase; font-family: "Trebuchet MS", Arial; font-size: 16px; font-weight: bold; text-decoration: none; color: #007fb6;}
+div#menuWrap li.sel a,
+div#menuWrap li a:hover {color: #00b1a7;}
+
+div#contentWrap {
+	float: left;
+	width: 500px;
+}
+div#contentWrap ul {
+	margin: 0 0 0 10px;
+	padding: 0 20px;
+}
+div#contentWrap li {
+	margin: 0;
+	line-height: 16px;
+	padding: 0 0 3px;
+}
+
+div#contentWrap h1 {
+	font-size: 14px;
+	margin: 0 0 10px;
+	padding: 0;
+}
+div#contentWrap h2 {
+	font-size: 12px;
+	margin: 0 0 5px;
+	padding: 0;
+}
+address {
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+img {
+	border: 0;
+}
+.fleft {
+	float: left;
+}
+.fright {
+	float: right;
+}
+.aright {
+	text-align: right;
+}
