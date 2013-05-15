@@ -1,7 +1,7 @@
 <?php 
 	$page = "/pages/bodytalk.php";
 	$title = "BodyTalk";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>BodyTalk</h1>
@@ -50,4 +50,4 @@
 	<p>Desuden er du altid velkommen til at kontakte undertegnede p&aring; tlf. 40920496.</p>
 
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

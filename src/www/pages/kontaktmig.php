@@ -1,11 +1,11 @@
 <?php 
 	$page = "/pages/kontaktmig.php";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Kontakt mig</h1>
 
-	<p>Du kan kontakte mig med spørgsmål og kommentarer via emailadressen <script type="text/javascript">Util.otliam('dorthe.torp', 'mail.dk');</script>. Nedenstående telefonnummer og adresse kan naturligvis også benyttes.</p>
+	<p>Du kan kontakte mig med sp&oslash;rgsm&aring;l og kommentarer via emailadressen <script type="text/javascript">Util.otliam(&#x27;dorthe.torp&#x27;, &#x27;mail.dk&#x27;);</script>. Nedenst&aring;ende telefonnummer og adresse kan naturligvis ogs&aring; benyttes.</p>
 	<h2>Postadresse:</h2>
 
 	<p>Dorthe Torp Schines</p>
@@ -23,4 +23,4 @@
 	</address>
 	<p>Telefon: 40 92 04 96</p>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

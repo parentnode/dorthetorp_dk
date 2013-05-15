@@ -1,7 +1,7 @@
 <?php 
 	$page = "/pages/binyre.php";
 	$title = "Binyretr&aelig;thed";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Binyretr&aelig;thed</h1>
@@ -27,4 +27,4 @@
 		<li>Tankefeltterapi</li>
 	</ul>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

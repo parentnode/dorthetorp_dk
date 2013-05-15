@@ -1,4 +1,4 @@
-<? include_once("segment.php") ?>
+<? include_once($_SERVER["FRAMEWORK_PATH"]."/include/segment.php") ?>
 <?php
 $menu = array();
 $menu_url = array();
@@ -17,6 +17,7 @@ $menu[] = array("label" => "tarotkursus", "url" => "/pages/tarotkursus.php");
 $menu[] = "separator";
 $menu[] = array("label" => "priser", "url" => "/pages/priser.php");
 $menu[] = array("label" => "presse", "url" => "/pages/presse.php");
+$menu[] = array("label" => "klienterne siger", "url" => "/pages/klienterne_siger.php");
 $menu[] = array("label" => "transport", "url" => "/pages/transport.php");
 $menu[] = array("label" => "kontakt mig", "url" => "/pages/kontaktmig.php");
 ?>

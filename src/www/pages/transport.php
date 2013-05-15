@@ -1,6 +1,6 @@
 <?php 
 	$page = "/pages/transport.php";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Transport</h1>
@@ -26,10 +26,10 @@
 	<br />
 
 	<p>Telefon: 40 92 04 96</p>
-	<p>Du kan finde den letteste vej på 
+	<p>Du kan finde den letteste vej p&aring; 
 		<a href="http://maps.google.dk" target="_blank">Google Maps</a>,
-		<a href="http://www.rejseplanen.dk" target="_blank">www.rejseplanen.dk</a> eller på 
+		<a href="http://www.rejseplanen.dk" target="_blank">www.rejseplanen.dk</a> eller p&aring; 
 		<a href="http://www.krak.dk" target="_blank">www.krak.dk</a>.
 	</p>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

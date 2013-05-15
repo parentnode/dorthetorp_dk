@@ -1,6 +1,6 @@
 <?php 
 	$page = "/pages/priser.php";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Priser</h1>
@@ -60,4 +60,4 @@
 	</tr>
 	</table>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

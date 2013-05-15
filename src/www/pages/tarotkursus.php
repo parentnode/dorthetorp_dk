@@ -1,7 +1,7 @@
 <?php 
 	$page = "/pages/tarotkursus.php";
 	$title = "Tarotkursus";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 
@@ -35,5 +35,5 @@
 	<p>Du kan kontakte mig på 40920496.</p>
 
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>
 

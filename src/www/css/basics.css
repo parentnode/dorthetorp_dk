@@ -18,7 +18,7 @@ body {
 
 div#pageWrap {
 	position: relative;
-	width: 650px;
+	width: 750px;
 }
 div#headerWrap {
 	overflow: hidden;
@@ -31,7 +31,7 @@ div#headerWrap .fleft img {
 
 div#menuWrap {
 	float: left;
-	width: 150px;
+	width: 200px;
 }
 div#menuWrap ul {
 	list-style: none;
@@ -52,7 +52,7 @@ div#menuWrap li a:hover {color: #00b1a7;}
 
 div#contentWrap {
 	float: left;
-	width: 500px;
+	width: 550px;
 }
 div#contentWrap ul {
 	margin: 0 0 0 10px;

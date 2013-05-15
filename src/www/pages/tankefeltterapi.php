@@ -1,7 +1,7 @@
 <?php 
 	$page = "/pages/tankefeltterapi.php";
 	$title = "Tankefeltterapi";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Tankefeltterapi</h1>
@@ -22,4 +22,4 @@
 		<li>Afh&aelig;ngighedsproblemer som cigaretter, mad, alkohol og misbrug af euforiserende stoffer.</li>
 	</ul>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>

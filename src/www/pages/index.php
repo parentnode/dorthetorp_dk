@@ -1,6 +1,6 @@
 <?php 
 	$page = "/pages/index.php";
-	include("../php/shell_header.php");
+	include($_SERVER["LOCAL_PATH"]."/templates/shell.header.php");
 ?>
 
 	<h1>Velkommen til dorthetorp.dk</h1>
@@ -24,4 +24,4 @@
 	</ul>
 	<p>Jeg er medlem af foreningen for alternative behandlere.</p>
 
-<?php include("../php/shell_footer.php") ?>
+<?php include($_SERVER["LOCAL_PATH"]."/templates/shell.footer.php") ?>
