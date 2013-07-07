@@ -11,7 +11,7 @@
 	<p>Dorthe Torp Schines</p>
 
 	<address>
-		Kronprinsensgade 7<br />
+		Albanigade 11 st<br />
 		5000 Odense
 	</address>
 

@@ -29,7 +29,7 @@
 	<p>Kr. 2.000,00 pr. weekend</p>
 
 	<h3>Sted:</h3>
-	<p>Solvognen, Kronprinsensgade 7, 5000 Odense C</p>
+	<p>Albanigade 11 st, 5000 Odense</p>
 
 	<h3>Kontakt:</h3>
 	<p>Du kan kontakte mig på 40920496.</p>

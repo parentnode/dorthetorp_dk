@@ -8,8 +8,8 @@
 	<p>Dorthe Torp</p>
 
 	<address>
-		<a href="http://maps.google.dk/maps?f=q&source=s_q&hl=da&geocode=&q=Kronprinsensgade+7,+Odense&sll=55.869147,11.228027&sspn=6.736975,16.940918&ie=UTF8&hq=&hnear=Kronprinsensgade+7,+5000+Odense+C,+Odense&z=16">
-			Kronprinsensgade 7<br />
+		<a href="http://maps.google.dk/maps?f=q&source=s_q&hl=da&geocode=&q=Albanigade+11,+Odense&sll=55.869147,11.228027&sspn=6.736975,16.940918&ie=UTF8&hq=&hnear=Albanigade+11,+5000+Odense+C,+Odense&z=16">
+			Albanigade 11 st<br />
 			5000 Odense
 		</a>
 	</address>
