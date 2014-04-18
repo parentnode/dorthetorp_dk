@@ -11,7 +11,7 @@
 	<p>Dorthe Torp Schines</p>
 
 	<address>
-		”Oasen”<br />
+		&quot;Oasen&quot;<br />
 		Thorsgade 13<br />
 		5000 Odense
 	</address>
