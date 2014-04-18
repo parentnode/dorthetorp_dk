@@ -9,21 +9,21 @@
 	<table cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td>Zoneterapi</td>
-		<td class="aright">kr. 550,00</td>
+		<td class="aright">kr. 480,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
 		<td>Healing</td>
-		<td class="aright">kr. 550,00</td>
+		<td class="aright">kr. 480,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
 		<td>Tarotkort/Clairvoyance</td>
-		<td class="aright">kr. 550,00</td>
+		<td class="aright">kr. 480,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
@@ -44,7 +44,7 @@
 	</tr-->
 	<tr>
 		<td>TFT</td>
-		<td class="aright">kr. 550,00</td>
+		<td class="aright">kr. 480,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>

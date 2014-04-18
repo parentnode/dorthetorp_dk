@@ -6,8 +6,8 @@
 
 	<h1>Tankefeltterapi</h1>
 	
-	<p>Tankefeltterapi, som ogs&aring; kaldes TFT, er en unik, effektiv og hurtig terapi form til behandling af psykologiske problemer, sygdomme og smerter.</p>
-	<p>Tankefeltterapi eller TFT, er en revolutionerende teknik til behandling af psykologiske problemer. Denne metode er blevet udviklet og finpudset over de sidste 25 &aring;r af Dr. Roger J. Callahan, Klinisk Psykolog fra Californien.</p>
+	<p>Tankefeltterapi, som ogs&aring; kaldes EFT/TFT, er en unik, effektiv og hurtig terapi form til behandling af psykologiske problemer, sygdomme og smerter.</p>
+	<p>Tankefeltterapi eller EFT/TFT, er en revolutionerende teknik til behandling af psykologiske problemer. Denne metode er blevet udviklet og finpudset over de sidste 25 &aring;r af Dr. Roger J. Callahan, Klinisk Psykolog fra Californien.</p>
 
 	<h2>Tankefeltterapi kan bruges til behandling af:</h2>
 	<ul>
