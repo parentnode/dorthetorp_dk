@@ -8,8 +8,9 @@
 	<p>Dorthe Torp</p>
 
 	<address>
-		<a href="http://maps.google.dk/maps?f=q&source=s_q&hl=da&geocode=&q=Albanigade+11,+Odense&sll=55.869147,11.228027&sspn=6.736975,16.940918&ie=UTF8&hq=&hnear=Albanigade+11,+5000+Odense+C,+Odense&z=16">
-			Albanigade 11 st<br />
+		<a href="http://maps.google.dk/maps?f=q&source=s_q&hl=da&geocode=&q=Thorsgade+13,+Odense">
+			&quot;Oasen&quot;<br />
+			Thorsgade 13<br />
 			5000 Odense
 		</a>
 	</address>
