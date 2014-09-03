@@ -1,0 +1,35 @@
+#content {position: relative; font-size: 0;}
+#content .scene {position: relative; padding: 50px 0;}
+
+#header {border-bottom: 1px solid #007fb6; text-align: center;}
+
+#header .servicenavigation {min-width: 600px; display: block; text-align: left;
+	background: transparent url(/img/bg_header.jpg) no-repeat right bottom;
+}
+#page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;}
+
+#header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
+#header .servicenavigation li a {display: block; font-size: 50px; text-decoration: none; color: #007fb6; line-height: 1em; text-transform: uppercase;}
+
+
+#content #navigation {display: inline-block; vertical-align: top; width: 20%;}
+#content .scene {display: inline-block; vertical-align: top; width: 80%;}
+
+
+#content #navigation {padding: 50px 0;}
+#content #navigation li {padding: 0px 10px 15px 20px;}
+#content #navigation li a {text-transform: uppercase; font-size: 16px; color: #007fb6;}
+#content #navigation li.selected a {color: #00b1a7;}
+#content #navigation li a:hover {color: #00b1a7; text-decoration: underline;}
+
+
+#content .scene ul {padding: 0 50px 30px;}
+#content .scene ul li {padding: 4px 0;}
+
+#content .scene table {margin: 0 50px;}
+#content .scene td {font-size: 13px;}
+
+#footer {text-align: center; border-top: 1px solid #007fb6; padding: 10px 0;}
+#footer p {padding: 0;}
+
+
