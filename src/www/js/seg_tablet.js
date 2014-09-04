@@ -1,7 +1,7 @@
 
-/*seg_desktop_include.js*/
+/*seg_tablet_include.js*/
 
-/*seg_desktop.js*/
+/*seg_tablet.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {};
 	u.version = 0.8;
@@ -2617,30 +2617,6 @@ Util.period = function(format, time) {
 		return _ in chars ? chars[_] : _.slice(1, _.length - 1);
 	});
 };
-Util.popup = function(url, settings) {
-	var width = "330";
-	var height = "150";
-	var name = "popup" + new Date().getHours() + "_" + new Date().getMinutes() + "_" + new Date().getMilliseconds();
-	var extra = "";
-	if(typeof(settings) == "object") {
-		var argument;
-		for(argument in settings) {
-			switch(argument) {
-				case "name"		: name		= settings[argument]; break;
-				case "width"	: width		= Number(settings[argument]); break;
-				case "height"	: height	= Number(settings[argument]); break;
-				case "extra"	: extra		= settings[argument]; break;
-			}
-		}
-	}
-	var p;
-	p = "width=" + width + ",height=" + height;
-	p += ",left=" + (screen.width-width)/2;
-	p += ",top=" + ((screen.height-height)-20)/2;
-	p += extra ? "," + extra : ",scrollbars";
-	document[name] = window.open(url, name, p);
-	return document[name];
-}
 u.preloader = function(node, files, options) {
 	var callback, callback_min_delay
 	if(typeof(options) == "object") {

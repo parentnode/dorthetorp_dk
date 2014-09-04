@@ -1,7 +1,7 @@
 
-/*seg_desktop_include.js*/
+/*seg_mobile_touch_include.js*/
 
-/*seg_desktop.js*/
+/*seg_mobile_touch.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {};
 	u.version = 0.8;
@@ -2617,30 +2617,6 @@ Util.period = function(format, time) {
 		return _ in chars ? chars[_] : _.slice(1, _.length - 1);
 	});
 };
-Util.popup = function(url, settings) {
-	var width = "330";
-	var height = "150";
-	var name = "popup" + new Date().getHours() + "_" + new Date().getMinutes() + "_" + new Date().getMilliseconds();
-	var extra = "";
-	if(typeof(settings) == "object") {
-		var argument;
-		for(argument in settings) {
-			switch(argument) {
-				case "name"		: name		= settings[argument]; break;
-				case "width"	: width		= Number(settings[argument]); break;
-				case "height"	: height	= Number(settings[argument]); break;
-				case "extra"	: extra		= settings[argument]; break;
-			}
-		}
-	}
-	var p;
-	p = "width=" + width + ",height=" + height;
-	p += ",left=" + (screen.width-width)/2;
-	p += ",top=" + ((screen.height-height)-20)/2;
-	p += extra ? "," + extra : ",scrollbars";
-	document[name] = window.open(url, name, p);
-	return document[name];
-}
 u.preloader = function(node, files, options) {
 	var callback, callback_min_delay
 	if(typeof(options) == "object") {
@@ -3215,20 +3191,27 @@ if(u.ga_account) {
 }
 
 
-/*i-page-desktop.js*/
+/*i-page-mobile_touch.js*/
+u.bug_force = true;
 u.bug_console_only = true;
 Util.Objects["page"] = new function() {
 	this.init = function(page) {
 		page.hN = u.qs("#header");
 		page.hN.service = u.qs(".servicenavigation", page.hN);
-		page.logo = u.ie(page.hN, "a", {"class":"logo"});
+		u.e.drag(page.hN, page.hN);
+		page.logo = u.ie(page.hN, "a", {"class":"logo", "html":u.eitherOr(u.site_name, "Frontpage")});
 		page.logo.url = '/';
 		page.cN = u.qs("#content", page);
 		page.nN = u.qs("#navigation", page);
 		page.nN.list = u.qs("ul", page.nN);
-		page.nN = page.insertBefore(page.nN, page.cN);
-		page.nN = u.ie(page.cN, page.nN);
+		page.nN = u.ie(page.hN, page.nN);
 		page.fN = u.qs("#footer");
+		page.fN.service = u.qs(".servicenavigation", page.fN);
+		page.fN.slogan = u.qs("p", page.fN);
+		u.ce(page.fN.slogan);
+		page.fN.slogan.clicked = function(event) {
+			window.open("http://parentnode.dk");
+		}
 		page.resized = function() {
 			this.calc_height = u.browserH();
 			this.calc_width = u.browserW();
@@ -3237,7 +3220,7 @@ Util.Objects["page"] = new function() {
 			if(this.available_height >= page.cN.offsetHeight) {
 				u.as(page.cN, "height", this.available_height+"px", false);
 			}
-			if(this.calc_width > 960) {
+			if(this.calc_width > 1300) {
 				u.ac(page, "fixed");
 			}
 			else {
@@ -3254,20 +3237,92 @@ Util.Objects["page"] = new function() {
 				page.cN.scene.scrolled();
 			}
 		}
+		page.orientationchanged = function() {
+			if(u.hc(page.bn_nav, "open")) {
+				u.as(page.hN, "height", window.innerHeight + "px");
+			}
+		}
 		page.ready = function() {
 			if(!u.hc(this, "ready")) {
 				u.addClass(this, "ready");
 				u.e.addEvent(window, "resize", page.resized);
 				u.e.addEvent(window, "scroll", page.scrolled);
+				u.e.addEvent(window, "orientationchange", page.orientationchanged);
 				this.initNavigation();
 				this.resized();
+				if(!u.getCookie("terms_v1")) {
+					var terms = u.ie(page.cN, "div", {"class":"terms_notification"});
+					u.ae(terms, "h3", {"html":"We love <br />cookies and privacy"});
+					var bn_accept = u.ae(terms, "a", {"class":"accept", "html":"Accept"});
+					bn_accept.terms = terms;
+					u.ce(bn_accept);
+					bn_accept.clicked = function() {
+						this.terms.parentNode.removeChild(this.terms);
+						u.saveCookie("terms_v1", true, {"expiry":new Date(new Date().getTime()+(1000*60*60*24*365)).toGMTString()});
+					}
+					if(!location.href.match(/\/terms/)) {
+						var bn_details = u.ae(terms, "a", {"class":"details", "html":"Details"});
+						bn_details.url = "/terms";
+						u.ce(bn_details, {"type":"link"});
+					}
+				}
 			}
 		}
 		page.initNavigation = function() {
+			this.bn_nav = u.qs(".servicenavigation li.navigation", this.hN);
+			u.ae(this.bn_nav, "div");
+			u.ae(this.bn_nav, "div");
+			u.ae(this.bn_nav, "div");
+			u.ce(this.bn_nav);
+			this.bn_nav.clicked = function(event) {
+				if(u.hc(this, "open")) {
+					u.rc(this, "open");
+					u.as(page.hN, "height", "60px");
+					u.as(page.nN, "display", "none");
+				}
+				else {
+					u.ac(this, "open");
+					u.as(page.hN, "height", window.innerHeight + "px");
+					u.as(page.nN, "display", "block");
+					page.nN.start_drag_y = (window.innerHeight - 100) - page.nN.offsetHeight;
+					page.nN.end_drag_y = page.nN.offsetHeight;
+				}
+			}
+			u.e.drag(this.nN, [0, (window.innerHeight - 100) - this.nN.offsetHeight, this.hN.offsetWidth, this.nN.offsetHeight], {"strict":false, "elastica":200, "vertical_lock":true});
 			var i, node;
-			this.hN.nodes = u.qsa("#navigation li,.servicenavigation li,a.logo", page.hN);
+			this.hN.nodes = u.qsa("#navigation li,a.logo", page.hN);
 			for(i = 0; node = this.hN.nodes[i]; i++) {
 				u.ce(node, {"type":"link"});
+				node._mousedover = function() {
+					this.transitioned = function() {
+						this.transitioned = function() {
+							u.a.transition(this, "none");
+						}
+						u.a.transition(this, "all 0.1s ease-in-out");
+						u.a.scale(this, 1.15);
+					}
+					u.a.transition(this, "all 0.1s ease-in-out");
+					u.a.scale(this, 1.22);
+				}
+				node._mousedout = function() {
+					this.transitioned = function() {
+						this.transitioned = function() {
+							u.a.transition(this, "none");
+						}
+						u.a.transition(this, "all 0.1s ease-in-out");
+						u.a.scale(this, 1);
+					}
+					u.a.transition(this, "all 0.1s ease-in-out");
+					u.a.scale(this, 0.9);
+				}
+				if(u.e.event_pref == "mouse") {
+					u.e.addEvent(node, "mouseover", node._mousedover);
+					u.e.addEvent(node, "mouseout", node._mousedout);
+				}
+				else {
+					u.e.addEvent(node, "touchstart", node._mousedover);
+					u.e.addEvent(node, "touchend", node._mousedout);
+				}
 			}
 		}
 		page.ready();
@@ -3276,7 +3331,7 @@ Util.Objects["page"] = new function() {
 u.e.addDOMReadyEvent(u.init);
 
 
-/*i-content-desktop.js*/
+/*i-content-mobile_touch.js*/
 Util.Objects["front"] = new function() {
 	this.init = function(scene) {
 	}

@@ -22,12 +22,22 @@
 #content #navigation li.selected a {color: #00b1a7;}
 #content #navigation li a:hover {color: #00b1a7; text-decoration: underline;}
 
+#content .scene hr {margin: 10px 50px 30px; border: none; border-top: 1px solid #007fb6;}
+
+#content .scene a {text-decoration: underline;}
 
 #content .scene ul {padding: 0 50px 30px;}
 #content .scene ul li {padding: 4px 0;}
 
 #content .scene table {margin: 0 50px;}
 #content .scene td {font-size: 13px;}
+
+#content .scene div.vcard {padding: 0 50px 20px;}
+#content .scene div.vcard * {font-size: 14px; color: #343434;}
+#content .scene div.vcard .name {padding: 0 0 5px;}
+#content .scene div.vcard .tel {padding-top: 10px;}
+#content .scene div.vcard .email {}
+
 
 #footer {text-align: center; border-top: 1px solid #007fb6; padding: 10px 0;}
 #footer p {padding: 0;}

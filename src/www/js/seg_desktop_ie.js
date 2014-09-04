@@ -1,7 +1,7 @@
 
-/*seg_desktop_include.js*/
+/*seg_desktop_ie_include.js*/
 
-/*seg_desktop.js*/
+/*seg_desktop_ie.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {};
 	u.version = 0.8;
@@ -3174,6 +3174,388 @@ Util.getVar = function(param, url) {
 	else {
 		return "";
 	}
+}
+u.a.transition = function(node, transition) {
+	var duration = transition.match(/[0-9.]+[ms]+/g);
+	if(duration) {
+		node.duration = duration[0].match("ms") ? parseFloat(duration[0]) : (parseFloat(duration[0]) * 1000);
+	}
+	else {
+		node.duration = false;
+		if(transition.match(/none/i)) {
+			node.transitioned = null;
+		}
+	}
+	if(u.support(this.variant()+"Transition")) {
+		node.style[this.variant()+"Transition"] = "none";
+	}
+}
+u.a.translate = function(node, x, y) {
+	var update_frequency = 25;
+	node._x = node._x ? node._x : 0;
+	node._y = node._y ? node._y : 0;
+	if(node.duration && (node._x != x || node._y != y)) {
+		node.x_start = node._x;
+		node.y_start = node._y;
+		node.translate_transitions = node.duration/update_frequency;
+		node.translate_progress = 0;
+		node.x_change = (x - node.x_start) / node.translate_transitions;
+		node.y_change = (y - node.y_start) / node.translate_transitions;
+		node.translate_transitionTo = function(event) {
+			++this.translate_progress;
+			var new_x = (Number(this.x_start) + Number(this.translate_progress * this.x_change));
+			var new_y = (Number(this.y_start) + Number(this.translate_progress * this.y_change));
+			this.style["msTransform"] = "translate("+ new_x + "px, " + new_y +"px)";
+			this.offsetHeight;
+			if(this.translate_progress < this.translate_transitions) {
+				this.t_translate_transition = u.t.setTimer(this, this.translate_transitionTo, update_frequency);
+			}
+			else {
+				this.style["msTransform"] = "translate("+ this._x + "px, " + this._y +"px)";
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.translate_transitionTo();
+	}
+	else {
+		node.style["msTransform"] = "translate("+ x + "px, " + y +"px)";
+	}
+	node._x = x;
+	node._y = y;
+	node.offsetHeight;
+}
+u.a.rotate = function(node, deg) {
+	var update_frequency = 25;
+	node._rotation = node._rotation ? node._rotation : 0;
+	if(node.duration && node._rotation != deg) {
+		node.rotate_start = node._rotation;
+		node.rotate_transitions = node.duration/update_frequency;
+		node.rotate_progress = 0;
+		node.rotate_change = (deg - node.rotate_start) / node.rotate_transitions;
+		node.rotate_transitionTo = function(event) {
+			++this.rotate_progress;
+			var new_deg = (Number(this.rotate_start) + Number(this.rotate_progress * this.rotate_change));
+			this.style["msTransform"] = "rotate("+ new_deg + "deg)";
+			this.offsetHeight;
+			if(this.rotate_progress < this.rotate_transitions) {
+				this.t_rotate_transition = u.t.setTimer(this, this.rotate_transitionTo, update_frequency);
+			}
+			else {
+				this.style["msTransform"] = "rotate("+ this._rotation + "deg)";
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.rotate_transitionTo();
+	}
+	else {
+		node.style["msTransform"] = "rotate("+ deg + "deg)";
+	}
+	node._rotation = deg;
+	node.offsetHeight;
+}
+u.a.scale = function(node, scale) {
+	var update_frequency = 25;
+	node._scale = node._scale ? node._scale : 0;
+	if(node.duration && node._scale != scale) {
+		node.scale_start = node._scale;
+		node.scale_transitions = node.duration/update_frequency;
+		node.scale_progress = 0;
+		node.scale_change = (scale - node.scale_start) / node.scale_transitions;
+		node.scale_transitionTo = function(event) {
+			++this.scale_progress;
+			var new_scale = (Number(this.scale_start) + Number(this.scale_progress * this.scale_change));
+			this.style["msTransform"] = "scale("+ new_scale +")";
+			this.offsetHeight;
+			if(this.scale_progress < this.scale_transitions) {
+				this.t_scale_transition = u.t.setTimer(this, this.scale_transitionTo, update_frequency);
+			}
+			else {
+				this.style["msTransform"] = "scale("+ this._scale +")";
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.scale_transitionTo();
+	}
+	else {
+		node.style["msTransform"] = "scale("+ scale +")";
+	}
+	node._scale = scale;
+	node.offsetHeight;
+}
+u.a.setOpacity = function(node, opacity) {
+	var update_frequency = 25;
+	node._opacity = node._opacity ? node._opacity : u.gcs(node, "opacity");
+	if(node.duration && node._opacity != opacity) {
+		node.opacity_start = node._opacity;
+		node.opacity_transitions = node.duration/update_frequency;
+		node.opacity_change = (opacity - node.opacity_start) / node.opacity_transitions;
+		node.opacity_progress = 0;
+		node.opacity_transitionTo = function(event) {
+			++this.opacity_progress;
+			var new_opacity = (Number(this.opacity_start) + Number(this.opacity_progress * this.opacity_change));
+			u.as(this, "opacity", new_opacity);
+			this.offsetHeight;
+			if(this.opacity_progress < this.opacity_transitions) {
+				this.t_opacity_transition = u.t.setTimer(this, this.opacity_transitionTo, update_frequency);
+			}
+			else {
+				this.style.opacity = this._opacity;
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.opacity_transitionTo();
+	}
+	else {
+		node.style.opacity = opacity;
+	}
+	node._opacity = opacity;
+	node.offsetHeight;
+}
+u.a.setWidth = function(node, width) {
+	var update_frequency = 25;
+	node._width = node._width ? node._width : u.gcs(node, "width").match("px") ? u.gcs(node, "width").replace("px", "") : 0;
+	if(node.duration && node._width != width) {
+		node.width_start = node._width;
+		node.width_transitions = node.duration/update_frequency;
+		node.width_change = (width - node.width_start) / node.width_transitions;
+		node.width_progress = 0;
+		node.width_transitionTo = function(event) {
+			++this.width_progress;
+			var new_width = (Number(this.width_start) + Number(this.width_progress * this.width_change));
+			u.as(this, "width", new_width+"px");
+			this.offsetHeight;
+			if(this.width_progress < this.width_transitions) {
+				this.t_width_transition = u.t.setTimer(this, this.width_transitionTo, update_frequency);
+			}
+			else {
+				u.as(this, "width", this._width);
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.width_transitionTo();
+	}
+	else {
+		var new_width = width.toString().match(/\%|auto/) ? width : width + "px";
+		u.as(node, "width", new_width);
+	}
+	node._width = width;
+	node.offsetHeight;
+}
+u.a.setHeight = function(node, height) {
+	var update_frequency = 25;
+	node._height = node._height ? node._height : u.gcs(node, "height").match("px") ? u.gcs(node, "height").replace("px", "") : 0;
+	if(node.duration && node._height != height) {
+		node.height_start = node._height;
+		node.height_transitions = node.duration/update_frequency;
+		node.height_change = (height - node.height_start) / node.height_transitions;
+		node.height_progress = 0;
+		node.height_transitionTo = function(event) {
+			++this.height_progress;
+			var new_height = (Number(this.height_start) + Number(this.height_progress * this.height_change));
+			u.as(this, "height", new_height+"px");
+			this.offsetHeight;
+			if(this.height_progress < this.height_transitions) {
+				this.t_height_transition = u.t.setTimer(this, this.height_transitionTo, update_frequency);
+			}
+			else {
+				u.as(this, "height", this._height);
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.height_transitionTo();
+	}
+	else {
+		var new_height = height.toString().match(/\%|auto/) ? height : height + "px";
+		u.as(node, "height", new_height);
+	}
+	node._height = height;
+	node.offsetHeight;
+}
+u.a.setBgPos = function(node, x, y) {
+	var update_frequency = 25;
+	var current_bg_x = u.gcs(node, "background-position-x");
+	var current_bg_y = u.gcs(node, "background-position-y");
+	node._bg_x = node._bg_x ? node._bg_x : current_bg_x.match("px") ? current_bg_x.replace("px", "") : x;
+	node._bg_y = node._bg_y ? node._bg_y : current_bg_y.match("px") ? current_bg_y.replace("px", "") : y;
+	if(node.duration && (node._bg_x != x || node._bg_y != y)) {
+		node._bg_same_x = false;
+		node._bg_same_y = false;
+		node.bg_transitions = node.duration/update_frequency;
+		if(node._bg_x != x) {
+			node.bg_start_x = node._bg_x;
+			node.bg_change_x = (x - node.bg_start_x) / node.bg_transitions;
+		}
+		else {
+			node._bg_same_x = true;
+		}
+		if(node._bg_y != y) {
+			node.bg_start_y = node._bg_y;
+			node.bg_change_y = (y - node.bg_start_y) / node.bg_transitions;
+		}
+		else {
+			node._bg_same_y = true;
+		}
+		node.bg_progress = 0;
+		node.bg_transitionTo = function(event) {
+			++this.bg_progress;
+			var new_x, new_y;
+			if(!this._bg_same_x) {
+				new_x = Math.round((Number(this.bg_start_x) + Number(this.bg_progress * this.bg_change_x)));
+			}
+			else {
+				new_x = this._bg_x;
+			}
+			if(!this._bg_same_y) {
+				new_y = Math.round((Number(this.bg_start_y) + Number(this.bg_progress * this.bg_change_y)));
+			}
+			else {
+				new_y = this._bg_y;
+			}
+			var new_bg_x = new_x.toString().match(/\%|top|left|right|center|bottom/) ? new_x : (new_x + "px");
+			var new_bg_y = new_y.toString().match(/\%|top|left|right|center|bottom/) ? new_y : (new_y + "px");
+			u.as(this, "backgroundPosition", new_bg_x + " " + new_bg_y);
+			this.offsetHeight;
+			if(this.bg_progress < this.bg_transitions) {
+				this.t_bg_transition = u.t.setTimer(this, this.bg_transitionTo, update_frequency);
+			}
+			else {
+				var new_bg_x = x.toString().match(/\%|top|left|right|center|bottom/) ? this._bg_x : (this._bg_x + "px");
+				var new_bg_y = y.toString().match(/\%|top|left|right|center|bottom/) ? this._bg_y : (this._bg_y + "px");
+				u.as(this, "backgroundPosition", new_bg_x + " " + new_bg_y);
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.bg_transitionTo();
+	}
+	else {
+		var new_bg_x = x.toString().match(/\%|top|left|right|center|bottom/) ? x : (x + "px");
+		var new_bg_y = y.toString().match(/\%|top|left|right|center|bottom/) ? y : (y + "px");
+		u.as(node, "backgroundPosition", new_bg_x + " " + new_bg_y);
+	}
+	node._bg_x = x;
+	node._bg_y = y;
+	node.offsetHeight;
+}
+u.a.setBgColor = function(node, color) {
+	var update_frequency = 100;
+	if(isNaN(node._bg_color_r) || isNaN(node._bg_color_g) || isNaN(node._bg_color_b)) {
+		var current_bg_color = u.gcs(node, "background-color");
+		var matches;
+		var current_bg_color_r, current_bg_color_g, current_bg_color_b;
+		var new_bg_color_r = false;
+		var new_bg_color_g = false;
+		var new_bg_color_b = false;
+		if(current_bg_color.match(/#[\da-fA-F]{3,6}/)) {
+			if(current_bg_color.length == 7) {
+				matches = current_bg_color.match(/#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/);
+			}
+			else {
+				matches = current_bg_color.match(/#([\da-fA-F]{1}),[ ]?([\da-fA-F]{1}),[ ]?([\da-fA-F]{1})/);
+			}
+			current_bg_color_r = u.hexToNum(matches[1]);
+			current_bg_color_g = u.hexToNum(matches[2]); 
+			current_bg_color_b = u.hexToNum(matches[3]);
+		}
+		else if(current_bg_color.match(/rgb\([\d]{1,3},[ ]?[\d]{1,3},[ ]?[\d]{1,3}\)/)) {
+			matches = current_bg_color.match(/rgb\(([\d]{1,3}),[ ]?([\d]{1,3}),[ ]?([\d]{1,3})\)/);
+			current_bg_color_r = matches[1];
+			current_bg_color_g = matches[2];
+			current_bg_color_b = matches[3];
+		}
+		else if(current_bg_color.match(/rgba\([\d]{1,3},[ ]?[\d]{1,3},[ ]?[\d]{1,3},[ ]?[\d\.]+\)/)) {
+			matches = current_bg_color.match(/rgba\(([\d]{1,3}),[ ]?([\d]{1,3}),[ ]?([\d]{1,3}),[ ]?([\d\.]+)\)/);
+			current_bg_color_r = matches[1];
+			current_bg_color_g = matches[2];
+			current_bg_color_b = matches[3];
+		}
+	}
+	if(color.match(/#[\da-fA-F]{3,6}/)) {
+		if(color.length == 7) {
+			matches = color.match(/#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/);
+		}
+		else {
+			matches = color.match(/#([\da-fA-F]{1}),[ ]?([\da-fA-F]{1}),[ ]?([\da-fA-F]{1})/);
+		}
+		new_bg_color_r = u.hexToNum(matches[1]);
+		new_bg_color_g = u.hexToNum(matches[2]);
+		new_bg_color_b = u.hexToNum(matches[3]);
+	}
+	node._bg_color_r = !isNaN(node._bg_color_r) ? node._bg_color_r : !isNaN(current_bg_color_r) ? current_bg_color_r : false;
+	node._bg_color_g = !isNaN(node._bg_color_g) ? node._bg_color_g : !isNaN(current_bg_color_g) ? current_bg_color_g : false;
+	node._bg_color_b = !isNaN(node._bg_color_b) ? node._bg_color_b : !isNaN(current_bg_color_b) ? current_bg_color_b : false;
+	if(node.duration && 
+	node._bg_color_r !== false && 
+	node._bg_color_g !== false && 
+	node._bg_color_b !== false && 
+	new_bg_color_r !== false && 
+	new_bg_color_g !== false && 
+	new_bg_color_b !== false &&
+	(new_bg_color_r != node._bg_color_r ||
+	new_bg_color_g != node._bg_color_g ||
+	new_bg_color_b != node._bg_color_b)) {
+		node.bg_color_r_start = node._bg_color_r;
+		node.bg_color_g_start = node._bg_color_g;
+		node.bg_color_b_start = node._bg_color_b;
+		node.bg_color_transitions = node.duration/update_frequency;
+		node.bg_color_r_change = (new_bg_color_r - node.bg_color_r_start) / node.bg_color_transitions;
+		node.bg_color_g_change = (new_bg_color_g - node.bg_color_g_start) / node.bg_color_transitions;
+		node.bg_color_b_change = (new_bg_color_b - node.bg_color_b_start) / node.bg_color_transitions;
+		node.bg_color_progress = 0;
+		node.bg_color_transitionTo = function(event) {
+			++this.bg_color_progress;
+			var new_bg_color_r = Math.round(Number(this.bg_color_r_start) + Number(this.bg_color_progress * this.bg_color_r_change));
+			var new_bg_color_g = Math.round(Number(this.bg_color_g_start) + Number(this.bg_color_progress * this.bg_color_g_change));
+			var new_bg_color_b = Math.round(Number(this.bg_color_b_start) + Number(this.bg_color_progress * this.bg_color_b_change));
+			var bg_hex_r = u.prefix(u.numToHex(new_bg_color_r), 2);
+			var bg_hex_g = u.prefix(u.numToHex(new_bg_color_g), 2);
+			var bg_hex_b = u.prefix(u.numToHex(new_bg_color_b), 2);
+			u.as(this, "backgroundColor", "#" + bg_hex_r + bg_hex_g + bg_hex_b);
+			this.offsetHeight;
+			if(this.bg_color_progress < this.bg_color_transitions) {
+				this.t_bg_color_transition = u.t.setTimer(this, this.bg_color_transitionTo, update_frequency);
+			}
+			else {
+				u.as(this, "backgroundColor", this._bg_color);
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		node.bg_color_transitionTo();
+	}
+	else {
+		node.style.backgroundColor = color;
+	}
+	node._bg_color = color;
+	node.offsetHeight;
+}
+u.a.rotateScale = function(node, deg, scale) {
+	node.style[u.a.variant() + "Transform"] = "rotate("+deg+"deg) scale("+scale+")";
+	node._rotation = deg;
+	node._scale = scale;
+	node.offsetHeight;
+}
+u.a.scaleRotateTranslate = function(node, scale, deg, x, y) {
+	node.style[u.a.variant() + "Transform"] = "scale("+scale+") rotate("+deg+"deg) translate("+x+"px, "+y+"px)";
+	node._rotation = deg;
+	node._scale = scale;
+	node._x = x;
+	node._y = y;
+	node.offsetHeight;
 }
 
 

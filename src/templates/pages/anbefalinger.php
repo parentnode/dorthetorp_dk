@@ -11,6 +11,7 @@ $this->pageDescription("Clairvoyance er evnen til at opfatte situationer og ople
 	<p>Jeg kan ikke udtale mig om Dorthe Torps evner inden for tydning af spillekort og stenl&aelig;gning, men jeg kan anbefale hendes kunnen inden for zoneterapi p&aring; det varmeste. Med fire n&aring;le i skuldrene, lukkede &oslash;jne, n&oslash;gen overkrop og bare f&oslash;dder i Dorthe Torps varme h&aelig;nder var jeg solgt. Inden jeg gik blev jeg healet st&aring;ende.</p>
 	<p><strong><em>Ekstra Bladet, mandag 27. september 2004</em></strong></p>
 
+	<hr />
 
 	<h2>Vi har alle noget i &quot;rygs&aelig;kken&quot;, jeg selv ikke undtaget.</h2>
 	<p>

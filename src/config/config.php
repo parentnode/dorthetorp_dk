@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 define("SITE_UID", "DOTO");
 define("SITE_NAME", "Circle of Life");
 define("SITE_URL", "dorthetorp.dk");
-define("SITE_EMAIL", "email@dorthetorp.dk");
+define("SITE_EMAIL", "dorthe.torp@mail.dk");
 
 /**
 * Optional constants
