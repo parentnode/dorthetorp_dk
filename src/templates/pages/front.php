@@ -1,7 +1,7 @@
 <div class="scene front i:front">
 
 	<ul class="slideshow">
-		<li><img src="/img/pi_1.jpg"></li>
+		<li><img src="/img/pi_front.jpg" alt="Dorthe Torp" /></li>
 	</ul>
 
 	<h1>Velkommen til Circle of Life</h1>

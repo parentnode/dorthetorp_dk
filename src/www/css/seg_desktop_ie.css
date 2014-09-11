@@ -37,12 +37,12 @@
 
 
 /*s-page-desktop.css*/
-* {font-family: "OpenSans", Verdana, Arial, sans-serif; color: #007fb6;
+* {font-family: "OpenSans", Verdana, Arial, sans-serif; color: #36543c;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 }
 html {min-height: 100%;}
-body {background: #e3eeee; margin: 0; overflow-y: scroll; overflow-x: hidden;}
+body {background: #efefef; margin: 0; overflow-y: scroll; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p, ul, li, dl, dd, dt {padding: 0; margin: 0;}
 h1, h2, h3, h4, h5, h6, p, li, dd, dt, span, a {line-height: 1em; font-weight: normal;}
 ul {list-style: none;}
@@ -53,7 +53,7 @@ fieldset {border: none;}
 input, select, textarea {font-size: 14px;}
 input, textarea {outline: none;}
 a, span {font-size: inherit; font-family: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; color: inherit; text-transform: inherit;}
-h1 {padding: 0 50px 30px; font-size: 38px; line-height: 1.05em; color: #007fb6;}
+h1 {padding: 0 50px 30px; font-size: 38px; line-height: 1.05em; color: #36543c;}
 h2 {padding: 0 50px 20px; font-size: 24px; line-height: 1.1em;}
 h3 {padding: 0 50px 10px; font-size: 20px; line-height: 1.25em;}
 h4 {padding: 0 50px 5px; font-size: 14px; line-height: 1em; font-weight: bold;}
@@ -81,33 +81,30 @@ dd {display: inline-block; vertical-align: top; font-size: 14px; line-height: 1.
 /*s-content-desktop.css*/
 #content {position: relative; font-size: 0;}
 #content .scene {position: relative; padding: 50px 0;}
-#header {border-bottom: 1px solid #007fb6; text-align: center;
-	background: transparent url(/img/havet.jpg) no-repeat right bottom;
-	background-size: 100% 100%; height: 80px;
+#header {border-bottom: 1px solid #36543c; text-align: center;
+	background: transparent url(/img/bg_header.jpg) no-repeat right top;
+	background-size: 100% auto; height: 200px;
 }
-#header .servicenavigation {min-width: 600px; display: block; text-align: left;
-	background: transparent url(/img/bg_header.jpg) no-repeat right bottom;
-	display: none;
+#header .servicenavigation {min-width: 600px; display: block; text-align: left; padding-top: 109px;
 }
 #page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;
-	display: none;
 }
 #header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
-#header .servicenavigation li a {display: block; font-size: 50px; text-decoration: none; color: #007fb6; line-height: 1em; text-transform: uppercase;}
+#header .servicenavigation li a {display: block; font-size: 70px; text-decoration: none; color: #efefef; line-height: 1em; text-transform: uppercase;}
 #content #navigation {display: inline-block; vertical-align: top; width: 20%;}
 #content .scene {display: inline-block; vertical-align: top; width: 80%;}
 #content #navigation {padding: 50px 0;}
 #content #navigation li {padding: 0px 10px 15px 20px;}
-#content #navigation li a {text-transform: uppercase; font-size: 16px; color: #007fb6;}
-#content #navigation li.selected a {color: #00b1a7;}
-#content #navigation li a:hover {color: #00b1a7; text-decoration: underline;}
-#content .scene hr {margin: 10px 50px 30px; border: none; border-top: 1px solid #007fb6;}
+#content #navigation li a {text-transform: uppercase; font-size: 16px; color: #899b9b;}
+#content #navigation li.selected a {color: #36543c;}
+#content #navigation li a:hover {color: #36543c; text-decoration: underline;}
+#content .scene hr {margin: 10px 50px 30px; border: none; border-top: 1px solid #899b9b;}
 #content .scene a {text-decoration: underline;}
 #content .scene ul {padding: 0 50px 30px;}
 #content .scene ul li {padding: 4px 0;}
-#content .scene ul.slideshow {padding: 0 50px 30px;}
+#content .scene ul.slideshow {margin: 0 50px 30px; padding: 0; border: 1px solid #899b9b;}
 #content .scene ul.slideshow li {padding: 0;}
-#content .scene ul.slideshow li img {width: 100%;;}
+#content .scene ul.slideshow li img {width: 100%;}
 #content .scene table {margin: 0 50px;}
 #content .scene td {font-size: 13px;}
 #content .scene div.vcard {padding: 0 50px 20px;}
@@ -115,31 +112,7 @@ dd {display: inline-block; vertical-align: top; font-size: 14px; line-height: 1.
 #content .scene div.vcard .name {padding: 0 0 5px;}
 #content .scene div.vcard .tel {padding-top: 10px;}
 #content .scene div.vcard .email {}
-#footer {text-align: center; border-top: 1px solid #007fb6; padding: 10px 0;}
+#footer {text-align: center; border-top: 1px solid #36543c; padding: 10px 0;}
 #footer p {padding: 0;}
 
-
-/*s-content-desktop_ie.css*/
-#content {position: relative; font-size: 0;}
-#content .scene {position: relative; padding: 50px 0;}
-#header {border-bottom: 1px solid #007fb6; text-align: center;}
-#header .servicenavigation {min-width: 600px; display: block; text-align: left;
-	background: transparent url(/img/bg_header.jpg) no-repeat right bottom;
-}
-#page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;}
-#header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
-#header .servicenavigation li a {display: block; font-size: 50px; text-decoration: none; color: #007fb6; line-height: 1em; text-transform: uppercase;}
-#content #navigation {display: inline-block; vertical-align: top; width: 20%;}
-#content .scene {display: inline-block; vertical-align: top; width: 80%;}
-#content #navigation {padding: 50px 0;}
-#content #navigation li {padding: 0px 10px 15px 20px;}
-#content #navigation li a {text-transform: uppercase; font-size: 16px; color: #007fb6;}
-#content #navigation li.selected a {color: #00b1a7;}
-#content #navigation li a:hover {color: #00b1a7; text-decoration: underline;}
-#content .scene ul {padding: 0 50px 30px;}
-#content .scene ul li {padding: 4px 0;}
-#content .scene table {margin: 0 50px;}
-#content .scene td {font-size: 13px;}
-#footer {text-align: center; border-top: 1px solid #007fb6; padding: 10px 0;}
-#footer p {padding: 0;}
 

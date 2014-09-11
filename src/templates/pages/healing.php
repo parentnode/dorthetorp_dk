@@ -8,6 +8,10 @@ $this->pageDescription("Healing er en formidling af livsenergi, som igangs&aelig
 	<p>Healing er en formidling af livsenergi, som igangs&aelig;tter en process. b&aring;de fysisk og psykisk.</p>
 	<p>Ved healing tilf&oslash;rer man kroppen energi, d&eacute;r hvor ubalancen er st&oslash;rst. Energien bliver kanaliseret fra healerens h&aelig;nder til patientens krop.</p>
 
+	<ul class="slideshow">
+		<li><img src="/img/pi_healing.jpg" alt="Healing" /></li>
+	</ul>
+
 	<h2>Reiki-healing anbefales til:</h2>
 	<ul>
 		<li>Fjerne smerter</li>

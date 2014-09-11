@@ -3,6 +3,7 @@ $this->pageTitle("Priser");
 $this->pageDescription("Priser for behandling hos Circle of Life");
 ?>
 <div class="scene healing">
+
 	<h1>Tankefeltterapi</h1>
 	<p>
 		Tankefeltterapi, som ogs&aring; kaldes EFT/TFT, er en unik, effektiv og hurtig terapi form til 
@@ -13,6 +14,10 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 		Denne metode er blevet udviklet og finpudset over de sidste 25 &aring;r af Dr. Roger J. Callahan, Klinisk 
 		Psykolog fra Californien.
 	</p>
+
+	<ul class="slideshow">
+		<li><img src="/img/pi_tft.jpg" alt="Tankefelterapi" /></li>
+	</ul>
 
 	<h2>Tankefeltterapi kan bruges til behandling af:</h2>
 	<ul>

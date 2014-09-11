@@ -4381,22 +4381,13 @@ Util.Objects["page"] = new function() {
 	this.init = function(page) {
 		page.hN = u.qs("#header");
 		page.hN.service = u.qs(".servicenavigation", page.hN);
-		page.logo = u.ie(page.hN, "a", {"class":"logo"});
-		page.logo.url = '/';
 		page.cN = u.qs("#content", page);
 		page.nN = u.qs("#navigation", page);
 		page.nN.list = u.qs("ul", page.nN);
-		page.nN = page.insertBefore(page.nN, page.cN);
 		page.nN = u.ie(page.cN, page.nN);
 		page.fN = u.qs("#footer");
 		page.resized = function() {
-			this.calc_height = u.browserH();
 			this.calc_width = u.browserW();
-			this.available_height = this.calc_height - page.hN.offsetHeight - page.fN.offsetHeight;
-			u.as(page.cN, "height", "auto", false);
-			if(this.available_height >= page.cN.offsetHeight) {
-				u.as(page.cN, "height", this.available_height+"px", false);
-			}
 			if(this.calc_width > 960) {
 				u.ac(page, "fixed");
 			}
@@ -4419,15 +4410,7 @@ Util.Objects["page"] = new function() {
 				u.addClass(this, "ready");
 				u.e.addEvent(window, "resize", page.resized);
 				u.e.addEvent(window, "scroll", page.scrolled);
-				this.initNavigation();
 				this.resized();
-			}
-		}
-		page.initNavigation = function() {
-			var i, node;
-			this.hN.nodes = u.qsa("#navigation li,.servicenavigation li,a.logo", page.hN);
-			for(i = 0; node = this.hN.nodes[i]; i++) {
-				u.ce(node, {"type":"link"});
 			}
 		}
 		page.ready();

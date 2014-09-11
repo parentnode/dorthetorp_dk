@@ -7,17 +7,13 @@ Util.Objects["page"] = new function() {
 		page.hN = u.qs("#header");
 		page.hN.service = u.qs(".servicenavigation", page.hN);
 
-		// add logo to navigation
-		page.logo = u.ie(page.hN, "a", {"class":"logo"});
-		page.logo.url = '/';
-
 		// content reference
 		page.cN = u.qs("#content", page);
 
 		// navigation reference
 		page.nN = u.qs("#navigation", page);
 		page.nN.list = u.qs("ul", page.nN);
-		page.nN = page.insertBefore(page.nN, page.cN);
+//		page.nN = page.insertBefore(page.nN, page.cN);
 		page.nN = u.ie(page.cN, page.nN);
 
 		// footer reference
@@ -28,16 +24,7 @@ Util.Objects["page"] = new function() {
 		// global resize handler 
 		page.resized = function() {
 
-			// adjust content height
-			this.calc_height = u.browserH();
 			this.calc_width = u.browserW();
-			this.available_height = this.calc_height - page.hN.offsetHeight - page.fN.offsetHeight;
-
-			u.as(page.cN, "height", "auto", false);
-			if(this.available_height >= page.cN.offsetHeight) {
-				u.as(page.cN, "height", this.available_height+"px", false);
-			}
-
 			if(this.calc_width > 960) {
 				u.ac(page, "fixed");
 			}
@@ -83,27 +70,9 @@ Util.Objects["page"] = new function() {
 				// set scroll handler
 				u.e.addEvent(window, "scroll", page.scrolled);
 
-				this.initNavigation();
-
 				this.resized();
 
 			}
-		}
-
-
-		// initialize navigation elements
-		page.initNavigation = function() {
-
-			var i, node;
-			// enable submenus where relevant
-			this.hN.nodes = u.qsa("#navigation li,.servicenavigation li,a.logo", page.hN);
-			for(i = 0; node = this.hN.nodes[i]; i++) {
-
-				// build first living proof model of CEL clickableElementLink
-				u.ce(node, {"type":"link"});
-
-			}
-
 		}
 
 
