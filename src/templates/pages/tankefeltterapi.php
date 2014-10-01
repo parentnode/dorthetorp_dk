@@ -1,6 +1,6 @@
 <?
-$this->pageTitle("Priser");
-$this->pageDescription("Priser for behandling hos Circle of Life");
+$this->pageTitle("Tankefeltterapi");
+$this->pageDescription("Tankefeltterapi, som også kaldes EFT/TFT, er en unik, effektiv og hurtig terapi form til behandling af psykologiske problemer, sygdomme og smerter.");
 ?>
 <div class="scene healing">
 
