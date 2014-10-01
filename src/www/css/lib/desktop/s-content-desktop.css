@@ -2,19 +2,12 @@
 #content .scene {position: relative; padding: 50px 0;}
 
 #header {border-bottom: 1px solid #36543c; text-align: center;
-	background: transparent url(/img/bg_header.jpg) no-repeat right top;
+	background: #355138 url(/img/bg_header.jpg) no-repeat center bottom;
 	background-size: 100% auto; height: 200px;
 }
 
-#header .servicenavigation {min-width: 600px; display: block; text-align: left; padding-top: 109px;
-	/*
-	background: transparent url(/img/bg_header.jpg) no-repeat right bottom;
-	display: none;
-	*/
-}
-#page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;
-	/*display: none;*/
-}
+#header .servicenavigation {min-width: 600px; display: block; text-align: left; padding-top: 109px;}
+#page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;}
 
 #header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
 #header .servicenavigation li a {display: block; font-size: 70px; text-decoration: none; color: #efefef; line-height: 1em; text-transform: uppercase;}
