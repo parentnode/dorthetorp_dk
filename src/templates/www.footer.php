@@ -4,7 +4,7 @@
 <?php
 $menu = array();
 
-$menu[] = array("label" => "forsiden", "url" => "/");
+$menu[] = array("label" => "Forsiden", "url" => "/");
 $menu[] = "separator";
 $menu[] = array("label" => "Om mig", "url" => "/pages/om_mig");
 $menu[] = array("label" => "EFT/TFT", "url" => "/pages/tankefeltterapi");
