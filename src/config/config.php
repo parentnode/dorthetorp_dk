@@ -12,16 +12,15 @@ error_reporting(E_ALL);
 */
 define("SITE_UID", "DOTO");
 define("SITE_NAME", "Circle of Life");
-define("SITE_URL", "dorthetorp.dk");
+define("SITE_URL", $_SERVER["SERVER_NAME"]);
 define("SITE_EMAIL", "dorthe.torp@mail.dk");
 
 /**
 * Optional constants
 */
 define("DEFAULT_PAGE_DESCRIPTION", "Zoneterapi, Tankefeltterapi, Healing og Tarotkort. Behandling og kurser på Fyn.");
-define("DEFAULT_LANGUAGE_ISO", "EN");
+define("DEFAULT_LANGUAGE_ISO", "DA");
 define("DEFAULT_COUNTRY_ISO", "DK");
-define("DEFAULT_CURRENCY_ISO", "DKK");
 
 
 // // Enable items model
