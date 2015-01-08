@@ -14,7 +14,16 @@ $page->bodyClass("page");
 $page->pageTitle("Circle of life - Dorthe Torp - Zoneterapi, Tankefeltterapi, Healing og Tarotkort");
 
 
+
 if(is_array($action) && count($action)) {
+
+	// fix redirect google issue
+	if(preg_match("/\.php$/", $action[0])) {
+		
+		header("Location: ".preg_replace("/\.php$/", "", $page->url), true, 301);
+		exit();
+	}
+
 
 	if(count($action) == 1) {
 

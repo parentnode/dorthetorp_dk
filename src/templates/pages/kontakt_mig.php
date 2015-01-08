@@ -14,7 +14,7 @@ $this->pageDescription("Clairvoyance er evnen til at opfatte situationer og ople
 	<h2>Postadresse:</h2>
 
 	<div class="vcard organization" itemscope itemtype="http://schema.org/Organization">
-		<div class="name" itemprop="name">Oasen</div>
+		<div class="name fn" itemprop="name">Oasen</div>
 		<div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			<div class="street-address" itemprop="streetAddress">Thorsgade 13</div>
 			<div><span class="postal-code" itemprop="postalCode">5000</span> <span class="locality" itemprop="addressLocality">Odense</span></div>
@@ -25,7 +25,7 @@ $this->pageDescription("Clairvoyance er evnen til at opfatte situationer og ople
 	<p>eller</p>
 
 	<div class="vcard person" itemscope itemtype="http://schema.org/Person">
-		<div class="name" itemprop="name">Dorthe Torp Schines</div>
+		<div class="name fn" itemprop="name">Dorthe Torp Schines</div>
 		<div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			<div class="street-address" itemprop="streetAddress">Rolf Krakes Vej 2</div>
 			<div><span class="postal-code" itemprop="postalCode">5700</span> <span class="locality" itemprop="addressLocality">Svendborg</span></div>
