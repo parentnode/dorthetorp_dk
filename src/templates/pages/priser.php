@@ -9,21 +9,21 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 	<table cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td>Zoneterapi</td>
-		<td class="aright">kr. 500,00</td>
+		<td class="aright">kr. 600,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
 		<td>Healing</td>
-		<td class="aright">kr. 500,00</td>
+		<td class="aright">kr. 600,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
 		<td>Tarotkort/Clairvoyance</td>
-		<td class="aright">kr. 500,00</td>
+		<td class="aright">kr. 600,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
@@ -44,7 +44,7 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 	</tr-->
 	<tr>
 		<td>TFT</td>
-		<td class="aright">kr. 500,00</td>
+		<td class="aright">kr. 600,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
