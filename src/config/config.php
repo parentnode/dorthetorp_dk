@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 define("SITE_UID", "DOTO");
 define("SITE_NAME", "Circle of Life");
 define("SITE_URL", $_SERVER["SERVER_NAME"]);
-define("SITE_EMAIL", "dorthe.torp@mail.dk");
+define("SITE_EMAIL", "mail@dorthetorp.dk");
 
 /**
 * Optional constants

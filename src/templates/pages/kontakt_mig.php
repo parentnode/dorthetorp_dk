@@ -7,7 +7,7 @@ $this->pageDescription("Clairvoyance er evnen til at opfatte situationer og ople
 
 	<p>
 		Du kan kontakte mig med sp&oslash;rgsm&aring;l og kommentarer via emailadressen 
-		<a href="mailto:dorthe.torp@mail.dk"><?= SITE_EMAIL ?></a>. 
+		<a href="mailto:<?= SITE_EMAIL ?>"><?= SITE_EMAIL ?></a>. 
 		Nedenst&aring;ende telefonnummer og adresse kan naturligvis ogs&aring; benyttes.
 	</p>
 
