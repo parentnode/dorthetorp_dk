@@ -3,7 +3,7 @@ $this->pageTitle("BodyTalk");
 $this->pageDescription("BodyTalk afbalancerer hjernen, organer, endokrine kirtler, bev&aelig;ge-apperatet, energisystemer, sanserne, angst, fobier, sorg og traumer.");
 ?>
 <div class="scene bodytalk" itemscope itemtype="http://schema.org/Article">
-	<h1 itemprop="name">BodyTalk</h1>
+	<h1 itemprop="headline">BodyTalk</h1>
 	<div class="description" itemprop="articleBody">
 		<p>BodyTalk er en ny revolutionerende m&aring;de at genskabe kroppens helbredende energi p&aring;.</p>
 		<p>BodyTalk afbalancerer hjernen, organer, endokrine kirtler, bev&aelig;ge-apperatet, energisystemer, sanserne, angst, fobier, sorg og traumer.</p>
@@ -49,4 +49,27 @@ $this->pageDescription("BodyTalk afbalancerer hjernen, organer, endokrine kirtle
 
 		<p>Desuden er du altid velkommen til at kontakte undertegnede p&aring; tlf. 40920496.</p>
 	</div>
+
+	<ul class="info">
+		<li class="published_at" itemprop="datePublished" content="<?= date("Y-m-d", filemtime(__FILE__)) ?>"><?= date("Y-m-d, H:i", filemtime(__FILE__)) ?></li>
+		<li class="modified_at" itemprop="dateModified" content="<?= date("Y-m-d", filemtime(__FILE__)) ?>"><?= date("Y-m-d, H:i", filemtime(__FILE__)) ?></li>
+		<li class="author" itemprop="author">Dorthe Torp</li>
+		<li class="main_entity share" itemprop="mainEntityOfPage"><?= SITE_URL."/pages/bodytalk" ?></li>
+		<li class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<ul class="publisher_info">
+				<li class="name" itemprop="name">dorthetorp.dk</li>
+				<li class="logo" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<span class="image_url" itemprop="url" content="<?= SITE_URL ?>/img/logo-large.png"></span>
+					<span class="image_width" itemprop="width" content="720"></span>
+					<span class="image_height" itemprop="height" content="405"></span>
+				</li>
+			</ul>
+		</li>
+		<li class="image_info" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+			<span class="image_url" itemprop="url" content="<?= SITE_URL ?>/img/logo-large.png"></span>
+			<span class="image_width" itemprop="width" content="720"></span>
+			<span class="image_height" itemprop="height" content="405"></span>
+		</li>
+	</ul>
+
 </div>

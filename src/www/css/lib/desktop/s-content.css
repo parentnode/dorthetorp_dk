@@ -1,5 +1,7 @@
 #content {position: relative; font-size: 0;}
 #content .scene {position: relative; padding: 50px 0;}
+#content ul.info {display: none;}
+
 
 #header {border-bottom: 1px solid #36543c; text-align: center;
 	background: #355138 url(/img/bg_header.jpg) no-repeat center bottom;
@@ -43,6 +45,10 @@
 #content .scene div.vcard .name {padding: 0 0 5px;}
 #content .scene div.vcard .tel {padding-top: 10px;}
 #content .scene div.vcard .email {}
+
+
+#content .scene.front ul.posts {padding: 0 0px 30px;}
+
 
 
 #footer {text-align: center; border-top: 1px solid #36543c; padding: 10px 0;}

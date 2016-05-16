@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 */
 define("SITE_UID", "DOTO");
 define("SITE_NAME", "Circle of Life");
-define("SITE_URL", $_SERVER["SERVER_NAME"]);
+define("SITE_URL", (isset($_SERVER["HTTPS"]) ? "https" : "http")."://".$_SERVER["SERVER_NAME"]);
 define("SITE_EMAIL", "mail@dorthetorp.dk");
 
 /**
@@ -24,7 +24,7 @@ define("DEFAULT_COUNTRY_ISO", "DK");
 
 
 // // Enable items model
-// define("SITE_ITEMS", true);
+define("SITE_ITEMS", true);
 // 
 // // Enable shop model
 // define("SITE_SHOP", true);

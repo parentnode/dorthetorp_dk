@@ -1,5 +1,5 @@
 
-/*seg_desktop_include.css*/
+/*seg_smartphone_include.css*/
 
 /*s-fonts.css*/
 @font-face {
@@ -53,65 +53,57 @@ fieldset {border: none;}
 input, select, textarea {font-size: 14px;}
 input, textarea {outline: none;}
 a, span {font-size: inherit; font-family: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; color: inherit; text-transform: inherit;}
-h1 {padding: 0 50px 30px; font-size: 38px; line-height: 1.05em; color: #36543c;}
-h2 {padding: 0 50px 20px; font-size: 24px; line-height: 1.1em;}
-h3 {padding: 0 50px 10px; font-size: 20px; line-height: 1.25em;}
-h4 {padding: 0 50px 5px; font-size: 14px; line-height: 1em; font-weight: bold;}
-h5 {padding: 0 50px 2px; font-size: 14px; line-height: 1em; font-weight: bold;}
-h6 {padding: 0 50px 2px; font-size: 14px; line-height: 1em; font-weight: bold;}
-p {padding: 0 50px 20px; font-size: 14px; line-height: 1.38em; color: #343434;} 
+h1 {padding: 0 20px 30px; font-size: 28px; line-height: 1.05em; color: #36543c;}
+h2 {padding: 0 20px 20px; font-size: 20px; line-height: 1.1em;}
+h3 {padding: 0 20px 10px; font-size: 18px; line-height: 1.25em;}
+h4 {padding: 0 20px 5px; font-size: 14px; line-height: 1em; font-weight: bold;}
+h5 {padding: 0 20px 2px; font-size: 14px; line-height: 1em; font-weight: bold;}
+h6 {padding: 0 20px 2px; font-size: 14px; line-height: 1em; font-weight: bold;}
+p {padding: 0 20px 20px; font-size: 14px; line-height: 1.38em; color: #343434;} 
 ul {font-size: 0;}
 li {display: block; font-size: 14px; line-height: 1.25em; color: #343434;}
 dl {font-size: 0;} 
 dt, 
 dd {display: inline-block; vertical-align: top; font-size: 14px; line-height: 1.25em;}
-.c {clear: both; font-size: 0;}
-.c400, .c300, .c266, .c200, .c150, .c133, .c100, .c75, .c50 {display: inline-block; min-height: 10px; vertical-align: top;}
-.c400 {width: 100%;}
-.c300 {width: 75%;}
-.c266 {width: 66%;}
-.c200 {width: 50%;}
-.c133 {width: 34%;}
-.c100 {width: 25%;}
-#page {position: relative; min-height: 100%;}
-#page #content {min-width: 600px;}
-#page.fixed #content {width: 960px; margin: 0 auto;}
 
 
 /*s-content.css*/
-#content {position: relative; font-size: 0;}
-#content .scene {position: relative; padding: 50px 0;}
+#content {position: relative; padding-top: 60px;}
+#content .scene {position: relative; padding: 30px 0;}
 #content ul.info {display: none;}
-#header {border-bottom: 1px solid #36543c; text-align: center;
-	background: #355138 url(/img/bg_header.jpg) no-repeat center bottom;
-	background-size: 100% auto; height: 200px;
+#header {position: fixed; height: 60px; width: 100%; top: 0; left: 0; background: #efefef; z-index: 8; border-bottom: 1px solid #899b9b;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
-#header .servicenavigation {min-width: 600px; display: block; text-align: left; padding-top: 109px;}
-#page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;}
-#header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
-#header .servicenavigation li a {display: block; font-size: 70px; text-decoration: none; color: #efefef; line-height: 1em; text-transform: uppercase;}
-#content #navigation {display: inline-block; vertical-align: top; width: 20%;}
-#content .scene {display: inline-block; vertical-align: top; width: 80%;}
-#content #navigation {padding: 50px 0;}
-#content #navigation li {padding: 0px 10px 15px 20px;}
-#content #navigation li a {text-transform: uppercase; font-size: 16px; color: #899b9b;}
-#content #navigation li.selected a {color: #36543c;}
-#content #navigation li a:hover {color: #36543c; text-decoration: underline;}
-#content .scene hr {margin: 10px 50px 30px; border: none; border-top: 1px solid #899b9b;}
+#header .logo {font-size: 30px; padding: 10px 20px; color: #36543c; cursor: pointer; display: inline-block; position: relative; z-index: 10;}
+#header .servicenavigation {position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 60px; background-color: #efefef;}
+#header .servicenavigation li.navigation {position: absolute; right: 0; top: 0; width: 30px; height: 39px; padding: 21px 15px 0;}
+#header .servicenavigation li.navigation div {border-radius: 1px; height: 3px; margin: 0 0 5px; background: #36543c;}
+#header .servicenavigation li.navigation.open div {background: #cccccc;}
+#header .servicenavigation li.navigation a {display: none;}
+#header .servicenavigation li.user {display: none;}
+#header .servicenavigation li.admin {display: none;}
+#navigation {position: absolute; width: 100%; top: 75px; display: none;}
+#navigation ul {}
+#navigation ul li {padding: 20px 20px 0 20px; font-size: 20px; color: #888888; display: block; text-align: center;}
+#navigation ul li:active {
+	color: #36543c;
+}
+#content .scene hr {margin: 10px 20px 30px; border: none; border-top: 1px solid #899b9b;}
 #content .scene a {text-decoration: underline;}
-#content .scene ul {padding: 0 50px 30px;}
+#content .scene ul {padding: 0 20px 30px;}
 #content .scene ul li {padding: 4px 0;}
-#content .scene ul.slideshow {margin: 0 50px 30px; padding: 0; border: 1px solid #899b9b;}
+#content .scene ul.slideshow {margin: 0 20px 30px; padding: 0; border: 1px solid #899b9b;}
 #content .scene ul.slideshow li {padding: 0;}
 #content .scene ul.slideshow li img {width: 100%;}
-#content .scene table {margin: 0 50px;}
+#content .scene table {margin: 0 20px;}
 #content .scene td {font-size: 13px;}
-#content .scene div.vcard {padding: 0 50px 20px;}
+#content .scene div.vcard {padding: 0 20px 20px;}
 #content .scene div.vcard * {font-size: 14px; color: #343434;}
 #content .scene div.vcard .name {padding: 0 0 5px;}
 #content .scene div.vcard .tel {padding-top: 10px;}
 #content .scene div.vcard .email {}
-#content .scene.front ul.posts {padding: 0 0px 30px;}
 #footer {text-align: center; border-top: 1px solid #36543c; padding: 10px 0;}
-#footer p {padding: 0;}
+#footer p {padding: 0; font-size: 13px;}
 

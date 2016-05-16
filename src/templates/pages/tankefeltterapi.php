@@ -4,7 +4,7 @@ $this->pageDescription("Tankefeltterapi, som også kaldes EFT/TFT, er en unik, e
 ?>
 <div class="scene tft" itemscope itemtype="http://schema.org/Article">
 
-	<h1 itemprop="name">Tankefeltterapi</h1>
+	<h1 itemprop="headline">Tankefeltterapi</h1>
 	<div class="description" itemprop="articleBody">
 		<p>
 			Tankefeltterapi, som ogs&aring; kaldes EFT/TFT, er en unik, effektiv og hurtig terapi form til 
@@ -33,4 +33,26 @@ $this->pageDescription("Tankefeltterapi, som også kaldes EFT/TFT, er en unik, e
 			<li>Afh&aelig;ngighedsproblemer som cigaretter, mad, alkohol og misbrug af euforiserende stoffer.</li>
 		</ul>
 	</div>
+
+	<ul class="info">
+		<li class="published_at" itemprop="datePublished" content="<?= date("Y-m-d", filemtime(__FILE__)) ?>"><?= date("Y-m-d, H:i", filemtime(__FILE__)) ?></li>
+		<li class="modified_at" itemprop="dateModified" content="<?= date("Y-m-d", filemtime(__FILE__)) ?>"><?= date("Y-m-d, H:i", filemtime(__FILE__)) ?></li>
+		<li class="author" itemprop="author">Dorthe Torp</li>
+		<li class="main_entity share" itemprop="mainEntityOfPage"><?= SITE_URL."/pages/tankefeltterapi" ?></li>
+		<li class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<ul class="publisher_info">
+				<li class="name" itemprop="name">dorthetorp.dk</li>
+				<li class="logo" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<span class="image_url" itemprop="url" content="<?= SITE_URL ?>/img/logo-large.png"></span>
+					<span class="image_width" itemprop="width" content="720"></span>
+					<span class="image_height" itemprop="height" content="405"></span>
+				</li>
+			</ul>
+		</li>
+		<li class="image_info" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+			<span class="image_url" itemprop="url" content="<?= SITE_URL ?>/img/logo-large.png"></span>
+			<span class="image_width" itemprop="width" content="720"></span>
+			<span class="image_height" itemprop="height" content="405"></span>
+		</li>
+	</ul>
 </div>
