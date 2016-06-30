@@ -18,7 +18,7 @@ define("SITE_EMAIL", "mail@dorthetorp.dk");
 /**
 * Optional constants
 */
-define("DEFAULT_PAGE_DESCRIPTION", "Zoneterapi, Tankefeltterapi, Healing og Tarotkort. Behandling og kurser på Fyn.");
+define("DEFAULT_PAGE_DESCRIPTION", "Tankefeltterapi (TFT), Healing og Tarotkort. Behandling og kurser på Fyn.");
 define("DEFAULT_LANGUAGE_ISO", "DA");
 define("DEFAULT_COUNTRY_ISO", "DK");
 

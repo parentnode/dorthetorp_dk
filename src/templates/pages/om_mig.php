@@ -8,7 +8,8 @@
 		</p>
 		<p>
 			Jeg stoppede mit arbejde i banken i &aring;r 2000, for at bruge mine evner til at hj&aelig;lpe mennesker 
-			der har brug for alternativ behandling. S&aring;ledes tilbyder jeg nu: Zoneterapi, Reiki-healing og Tankefeltterapi.
+			der har brug for alternativ behandling. S&aring;ledes tilbyder jeg nu: Reiki-healing, Tankefeltterapi (TFT) og
+			Tarotkort.
 		</p>
 
 		<h2>Mine uddannelser har jeg taget hos:</h2>

@@ -10,7 +10,7 @@ include_once($_SERVER["FRAMEWORK_PATH"]."/config/init.php");
 $action = $page->actions();
 
 $page->bodyClass("front");
-$page->pageTitle("Circle of life - Dorthe Torp - Zoneterapi, Tankefeltterapi, Healing og Tarotkort");
+$page->pageTitle("Circle of life - Dorthe Torp - Tankefeltterapi, Healing og Tarotkort");
 
 
 $page->page(array(

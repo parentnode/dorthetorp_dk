@@ -11,7 +11,7 @@ $action = $page->actions();
 
 
 $page->bodyClass("page");
-$page->pageTitle("Circle of life - Dorthe Torp - Zoneterapi, Tankefeltterapi, Healing og Tarotkort");
+$page->pageTitle("Circle of life - Dorthe Torp - Tankefeltterapi, Healing og Tarotkort");
 
 
 

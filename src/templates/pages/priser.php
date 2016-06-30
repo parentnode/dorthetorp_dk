@@ -7,10 +7,10 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 
 	<!-- contents starts -->
 	<table cellpadding="0" cellspacing="0" border="0">
-	<tr>
+	<!--tr>
 		<td>Zoneterapi</td>
 		<td class="aright">kr. 600,00</td>
-	</tr>
+	</tr-->
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
