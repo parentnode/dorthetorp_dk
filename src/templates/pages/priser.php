@@ -50,6 +50,13 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
+		<td>Zoneterapi i Svendborg</td>
+		<td class="aright">kr. 400,00</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="height:10px;"></td>
+	</tr>
+	<tr>
 		<td colspan="2" style="color:#999999;">Alle priser er for 55 minutters behandling.<br />Derefter 250,- for hver p&aring;begyndt 1/2 time.</td>
 	</tr>
 	<tr>
