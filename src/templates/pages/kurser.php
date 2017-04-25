@@ -29,7 +29,7 @@ $this->pageDescription("Dette kursus henvender sig til alle der er interesseret 
 		<p>Kr. 2.000,00 pr. weekend</p>
 
 		<h3>Sted:</h3>
-		<p>Albanigade 11 st, 5000 Odense</p>
+		<p>Thorsgade 13, 5000 Odense</p>
 
 		<h3>Kontakt:</h3>
 		<p>Du kan kontakte mig på 40920496.</p>
