@@ -12,7 +12,9 @@
 #page.fixed #header .servicenavigation {width: 960px; display: inline-block; vertical-align: top;}
 
 #header .servicenavigation li {display: inline-block; padding: 30px 0 30px 15px;}
-#header .servicenavigation li a {display: block; font-size: 70px; text-decoration: none; color: #efefef; line-height: 1em; text-transform: uppercase;}
+#header .servicenavigation li a {display: block; font-size: 70px; text-decoration: none; color: #efefef; line-height: 1em; text-transform: uppercase;
+	text-shadow: 0px 0px 2px green; height: 62px; overflow: hidden;
+}
 
 
 #content #navigation {display: inline-block; vertical-align: top; width: 20%;}
