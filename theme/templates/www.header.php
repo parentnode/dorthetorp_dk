@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="<?= $this->language() ?>">
 <head>
-	<!-- (c) & (p) parentNode.dk 2009-2015 //-->
+	<!-- (c) & (p) parentNode.dk 2009-2018 //-->
 	<!-- All material protected by copyrightlaws, as if you didnt know //-->
-	<!-- If you want to help build the ultimate frontend-centered platform, visit parentnode.dk -->
+	<!-- We build websites for good causes – visit parentnode.dk to learn more -->
 	<title><?= $this->pageTitle() ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="keywords" content="Tankefeltterapi Healing Tarotkort Alternativ Behandling Kurser Svendborg Fyn" />

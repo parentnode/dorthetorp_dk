@@ -3,6 +3,13 @@ u.bug_console_only = true;
 Util.Objects["page"] = new function() {
 	this.init = function(page) {
 
+		// show parentnode comment in console
+		u.bug_force = true;
+		u.bug("This site is built using the combined powers of body, mind and spirit. Well, and also Manipulator, Janitor and Detector");
+		u.bug("We're a good karma web agency - Let's work together to create a better future. Visit https://parentnode.dk for more information");
+		u.bug_force = false;
+
+
 		// header reference
 		page.hN = u.qs("#header");
 		page.hN.service = u.qs(".servicenavigation", page.hN);
