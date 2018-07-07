@@ -26,17 +26,17 @@ Util.Objects["page"] = new function() {
 
 			this.calc_width = u.browserW();
 			if(this.calc_width > 960) {
-				u.ac(page, "fixed");
+				u.ac(this, "fixed");
 			}
 			else {
-				u.rc(page, "fixed");
+				u.rc(this, "fixed");
 			}
 
 			// forward resize event to current scene
-			if(page.cN && page.cN.scene) {
+			if(this.cN && this.cN.scene) {
 
-				if(typeof(page.cN.scene.resized) == "function") {
-					page.cN.scene.resized();
+				if(typeof(this.cN.scene.resized) == "function") {
+					this.cN.scene.resized();
 				}
 
 			}
@@ -47,8 +47,8 @@ Util.Objects["page"] = new function() {
 		page.scrolled = function() {
 
 			// forward scroll event to current scene
-			if(page.cN && page.cN.scene && typeof(page.cN.scene.scrolled) == "function") {
-				page.cN.scene.scrolled();
+			if(this.cN && this.cN.scene && typeof(this.cN.scene.scrolled) == "function") {
+				this.cN.scene.scrolled();
 			}
 
 		}
@@ -66,9 +66,9 @@ Util.Objects["page"] = new function() {
 				u.addClass(this, "ready");
 
 				// set resize handler
-				u.e.addEvent(window, "resize", page.resized);
+				u.e.addWindowEvent(this, "resize", this.resized);
 				// set scroll handler
-				u.e.addEvent(window, "scroll", page.scrolled);
+				u.e.addWindowEvent(this, "scroll", this.scrolled);
 
 				this.resized();
 

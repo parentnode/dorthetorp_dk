@@ -32,25 +32,46 @@ Util.Objects["page"] = new function() {
 		page.resized = function() {
 
 			// forward resize event to current scene
-			if(page.cN && page.cN.scene && typeof(page.cN.scene.resized) == "function") {
-				page.cN.scene.resized();
+			if(this.cN && this.cN.scene && typeof(this.cN.scene.resized) == "function") {
+				this.cN.scene.resized();
 			}
+
+		}
+
+
+
+		// iOS scroll fix 
+		page.fixiOSScroll = function() {
+
+			u.ass(this.hN, {
+				"position":"absolute",
+			});
+
+
+			u.ass(this.hN, {
+				"position":"fixed",
+			});
 
 		}
 
 		// global scroll handler 
 		page.scrolled = function() {
 
+			// Fix issue with fixed element after scroll
+			u.t.resetTimer(this.t_fix);
+			this.t_fix = u.t.setTimer(this, "fixiOSScroll", 200);
+
+
 			// forward scroll event to current scene
-			if(page.cN && page.cN.scene && typeof(page.cN.scene.scrolled) == "function") {
-				page.cN.scene.scrolled();
+			if(this.cN && this.cN.scene && typeof(this.cN.scene.scrolled) == "function") {
+				this.cN.scene.scrolled();
 			}
 
 		}
 
 		page.orientationchanged = function() {
-			if(u.hc(page.bn_nav, "open")) {
-				u.as(page.hN, "height", window.innerHeight + "px");
+			if(u.hc(this.bn_nav, "open")) {
+				u.as(this.hN, "height", window.innerHeight + "px");
 			}
 		}
 		
@@ -67,11 +88,11 @@ Util.Objects["page"] = new function() {
 				u.addClass(this, "ready");
 
 				// set resize handler
-				u.e.addEvent(window, "resize", page.resized);
+				u.e.addWindowEvent(this, "resize", this.resized);
 				// set scroll handler
-				u.e.addEvent(window, "scroll", page.scrolled);
+				u.e.addWindowEvent(this, "scroll", this.scrolled);
 				// set orientation change handler
-				u.e.addEvent(window, "orientationchange", page.orientationchanged);
+				u.e.addWindowEvent(this, "orientationchange", this.orientationchanged);
 
 				this.initNavigation();
 

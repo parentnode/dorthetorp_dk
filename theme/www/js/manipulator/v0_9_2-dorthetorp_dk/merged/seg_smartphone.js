@@ -1,7 +1,11 @@
+/*
+Manipulator v0.9.2-axpoint Copyright 2018 http://manipulator.parentnode.dk
+js-merged @ 2018-07-07 11:14:46
+*/
 
 /*seg_smartphone_include.js*/
 
-/*seg_smartphone.js*/
+/*u.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {};
 	u.version = "0.9.2";
@@ -11,6 +15,8 @@ if(!u || !Util) {
 function fun(v) {return (typeof(v) === "function")}
 function obj(v) {return (typeof(v) === "object")}
 function str(v) {return (typeof(v) === "string")}
+
+/*u-debug.js*/
 u.bug_console_only = true;
 Util.debugURL = function(url) {
 	if(u.bug_force) {
@@ -44,6 +50,8 @@ Util.exception = function(name, _arguments, _exception) {
 	console.error(_exception);
 	u.bug("Invoked with arguments:");
 	console.log(_arguments);
+	// 
+	// 
 }
 Util.bug = function() {
 	if(u.debugURL()) {
@@ -131,6 +139,9 @@ Util.xInObject = function(object, _options) {
 		}
 	}
 }
+
+
+/*u-cookie.js*/
 Util.saveCookie = function(name, value, _options) {
 	var expires = true;
 	var path = false;
@@ -291,6 +302,9 @@ Util.cookieReference = function(node, _options) {
 	}
 	return ref;
 }
+
+
+/*u-dom.js*/
 Util.querySelector = u.qs = function(query, scope) {
 	scope = scope ? scope : document;
 	return scope.querySelector(query);
@@ -739,6 +753,8 @@ u.containsOrIs = function(node, scope) {
 	}
 	return false;
 }
+
+/*u-events.js*/
 Util.Events = u.e = new function() {
 	this.event_pref = typeof(document.ontouchmove) == "undefined" || (navigator.maxTouchPoints > 1 && navigator.userAgent.match(/Windows/i)) ? "mouse" : "touch";
 	if(navigator.maxTouchPoints > 1) {
@@ -1085,6 +1101,9 @@ Util.Events = u.e = new function() {
 		}
 	}
 }
+
+
+/*u-events-browser.js*/
 u.e.addDOMReadyEvent = function(action) {
 	if(document.readyState && document.addEventListener) {
 		if((document.readyState == "interactive" && !u.browser("ie")) || document.readyState == "complete" || document.readyState == "loaded") {
@@ -1183,6 +1202,9 @@ u.e.removeWindowEndEvent = function(node, id) {
 	window["_Onend_node_"+ id] = null;
 	window["_Onend_callback_"+ id] = null;
 }
+
+
+/*u-events-movements.js*/
 u.e.resetDragEvents = function(node) {
 	node._moves_pick = 0;
 	this.removeEvent(node, "mousemove", this._pick);
@@ -1271,6 +1293,13 @@ u.e.drag = function(node, boundaries, _options) {
 		node.start_drag_y = u.absY(boundaries) - u.absY(node);
 		node.end_drag_x = node.start_drag_x + boundaries.offsetWidth;
 		node.end_drag_y = node.start_drag_y + boundaries.offsetHeight;
+		// 	
+		// 	
+		// 	
+		// 	
+		// 	
+		// 	
+		// 	
 	}
 	if(node.show_bounds) {
 		var debug_bounds = u.ae(document.body, "div", {"class":"debug_bounds"})
@@ -1332,6 +1361,14 @@ u.e._pick = function(event) {
 				this[this.callback_picked](event);
 			}
 			if(this.drag_dropout && event.type.match(/mouse/)) {
+				// 	
+				// 	
+				// 	
+				// 	
+				// 	
+				// 
+				// 
+				// 	
 				this._dropOutDrag = u.e._drag;
 				this._dropOutDrop = u.e._drop;
 				u.e.addOutEvent(this, u.e._drop_out);
@@ -1532,6 +1569,9 @@ u.e.swipe = function(node, boundaries, _options) {
 	node.e_swipe = true;
 	u.e.drag(node, boundaries, _options);
 }
+
+
+/*u-geometry.js*/
 Util.absoluteX = u.absX = function(node) {
 	if(node.offsetParent) {
 		return node.offsetLeft + u.absX(node.offsetParent);
@@ -1586,6 +1626,9 @@ Util.pageScrollX = u.scrollX = function() {
 Util.pageScrollY = u.scrollY = function() {
 	return window.pageYOffset;
 }
+
+
+/*u-init.js*/
 Util.Objects = u.o = new Object();
 Util.init = function(scope) {
 	var i, node, nodes, object;
@@ -1600,6 +1643,9 @@ Util.init = function(scope) {
 		}
 	}
 }
+
+
+/*u-math.js*/
 Util.random = function(min, max) {
 	return Math.round((Math.random() * (max - min)) + min);
 }
@@ -1613,6 +1659,8 @@ Util.round = function(number, decimals) {
 	var round_number = number*Math.pow(10, decimals);
 	return Math.round(round_number)/Math.pow(10, decimals);
 }
+
+/*u-string.js*/
 Util.cutString = function(string, length) {
 	var matches, match, i;
 	if(string.length <= length) {
@@ -1728,6 +1776,9 @@ Util.isStringHTML = function(string) {
 	}
 	return false;
 }
+
+
+/*u-system.js*/
 Util.browser = function(model, version) {
 	var current_version = false;
 	if(model.match(/\bedge\b/i)) {
@@ -1919,6 +1970,9 @@ Util.vendorPrefix = function() {
 	}
 	return Util.vendor_prefix;
 }
+
+
+/*u-timer.js*/
 Util.Timer = u.t = new function() {
 	this._timers = new Array();
 	this.setTimer = function(node, action, timeout, param) {
@@ -1989,6 +2043,9 @@ Util.Timer = u.t = new function() {
 		}
 	}
 }
+
+
+/*u-url.js*/
 Util.getVar = function(param, url) {
 	var string = url ? url.split("#")[0] : location.search;
 	var regexp = new RegExp("[\&\?\b]{1}"+param+"\=([^\&\b]+)");
@@ -2001,166 +2058,3 @@ Util.getVar = function(param, url) {
 	}
 }
 
-
-/*ga.js*/
-u.ga_account = 'UA-55311768-1';
-u.ga_domain = 'dorthetorp.dk';
-u.gapi_key = false;
-
-/*u-googleanalytics.js*/
-if(u.ga_account) {
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.defer=true;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', u.ga_account, u.ga_domain);
-    ga('send', 'pageview');
-	u.stats = new function() {
-		this.pageView = function(url) {
-			ga('send', 'pageview', url);
-		}
-		this.event = function(node, _options) {
-			var event = false;
-			var eventCategory = "Uncategorized";
-			var eventAction = null;
-			var eventLabel = null;
-			var eventValue = null;
-			var nonInteraction = false;
-			var hitCallback = null;
-			if(typeof(_options) == "object") {
-				var _argument;
-				for(_argument in _options) {
-					switch(_argument) {
-						case "event"				: event					= _options[_argument]; break;
-						case "eventCategory"		: eventCategory			= _options[_argument]; break;
-						case "eventAction"			: eventAction			= _options[_argument]; break;
-						case "eventLabel"			: eventLabel			= _options[_argument]; break;
-						case "eventValue"			: eventValue			= _options[_argument]; break;
-						case "nonInteraction"		: nonInteraction		= _options[_argument]; break;
-						case "hitCallback"			: hitCallback			= _options[_argument]; break;
-					}
-				}
-			}
-			if(!eventAction && event && event.type) {
-				eventAction = event.type;
-			}
-			else if(!eventAction) {
-				eventAction = "Unknown";
-			}
-			if(!eventLabel && event && event.currentTarget && event.currentTarget.url) {
-				eventLabel = event.currentTarget.url;
-			}
-			else if(!eventLabel) {
-				eventLabel = this.nodeSnippet(node);
-			}
-			ga('send', 'event', {
-				"eventCategory": eventCategory, 
-				"eventAction": eventAction,
-				"eventLabel": eventLabel,
-				"eventValue": eventValue,
-				"nonInteraction": nonInteraction,
-				"hitCallback": hitCallback
-			});
-		}
-		// 	
-		// 	//       slot,		
-		// 	//       name,		
-		// 	//       value,	
-		// 	//       scope		
-		// 	
-		this.nodeSnippet = function(node) {
-			return u.cutString(u.text(node).trim(), 20) + "(<"+node.nodeName+">)";
-		}
-	}
-}
-
-
-/*i-page.js*/
-u.bug_force = true;
-u.bug_console_only = true;
-Util.Objects["page"] = new function() {
-	this.init = function(page) {
-		page.hN = u.qs("#header");
-		page.hN.service = u.qs(".servicenavigation", page.hN);
-		u.e.drag(page.hN, page.hN);
-		page.logo = u.ie(page.hN, "a", {"class":"logo", "html":"Circle of life"});
-		page.logo.url = '/';
-		page.cN = u.qs("#content", page);
-		page.nN = u.qs("#navigation", page);
-		page.nN.list = u.qs("ul", page.nN);
-		page.nN = u.ie(page.hN, page.nN);
-		page.fN = u.qs("#footer");
-		page.fN.service = u.qs(".servicenavigation", page.fN);
-		page.resized = function() {
-			if(this.cN && this.cN.scene && typeof(this.cN.scene.resized) == "function") {
-				this.cN.scene.resized();
-			}
-		}
-		page.fixiOSScroll = function() {
-			u.ass(this.hN, {
-				"position":"absolute",
-			});
-			u.ass(this.hN, {
-				"position":"fixed",
-			});
-		}
-		page.scrolled = function() {
-			u.t.resetTimer(this.t_fix);
-			this.t_fix = u.t.setTimer(this, "fixiOSScroll", 200);
-			if(this.cN && this.cN.scene && typeof(this.cN.scene.scrolled) == "function") {
-				this.cN.scene.scrolled();
-			}
-		}
-		page.orientationchanged = function() {
-			if(u.hc(this.bn_nav, "open")) {
-				u.as(this.hN, "height", window.innerHeight + "px");
-			}
-		}
-		page.ready = function() {
-			if(!u.hc(this, "ready")) {
-				u.addClass(this, "ready");
-				u.e.addWindowEvent(this, "resize", this.resized);
-				u.e.addWindowEvent(this, "scroll", this.scrolled);
-				u.e.addWindowEvent(this, "orientationchange", this.orientationchanged);
-				this.initNavigation();
-				this.resized();
-			}
-		}
-		page.initNavigation = function() {
-			this.bn_nav = u.qs(".servicenavigation li.navigation", this.hN);
-			u.ae(this.bn_nav, "div");
-			u.ae(this.bn_nav, "div");
-			u.ae(this.bn_nav, "div");
-			u.ce(this.bn_nav);
-			this.bn_nav.clicked = function(event) {
-				if(u.hc(this, "open")) {
-					u.rc(this, "open");
-					u.as(page.hN, "height", "60px");
-					u.as(page.nN, "display", "none");
-				}
-				else {
-					u.ac(this, "open");
-					u.as(page.hN, "height", window.innerHeight + "px");
-					u.as(page.nN, "display", "block");
-					page.nN.start_drag_y = (window.innerHeight - 100) - page.nN.offsetHeight;
-					page.nN.end_drag_y = page.nN.offsetHeight;
-				}
-			}
-			u.e.drag(this.nN, [0, (window.innerHeight - 100) - this.nN.offsetHeight, this.hN.offsetWidth, this.nN.offsetHeight], {"strict":false, "elastica":200, "vertical_lock":true});
-			var i, node;
-			this.hN.nodes = u.qsa("#navigation li,a.logo", page.hN);
-			for(i = 0; node = this.hN.nodes[i]; i++) {
-				u.ce(node, {"type":"link"});
-			}
-		}
-		page.ready();
-	}
-}
-u.e.addDOMReadyEvent(u.init);
-
-
-/*i-content.js*/
-Util.Objects["front"] = new function() {
-	this.init = function(scene) {
-	}
-}
