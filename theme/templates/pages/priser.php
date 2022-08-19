@@ -16,14 +16,14 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 	</tr>
 	<tr>
 		<td>Healing</td>
-		<td class="aright">kr. 600,00</td>
+		<td class="aright">kr. 750,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
 	<tr>
 		<td>Tarotkort/Clairvoyance</td>
-		<td class="aright">kr. 600,00</td>
+		<td class="aright">kr. 750,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
@@ -44,15 +44,15 @@ $this->pageDescription("Priser for behandling hos Circle of Life");
 	</tr-->
 	<tr>
 		<td>TFT</td>
-		<td class="aright">kr. 600,00</td>
+		<td class="aright">kr. 750,00</td>
 	</tr>
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>
-	<tr>
+	<!--tr>
 		<td>Zoneterapi i Svendborg</td>
 		<td class="aright">kr. 400,00</td>
-	</tr>
+	</tr-->
 	<tr>
 		<td colspan="2" style="height:10px;"></td>
 	</tr>

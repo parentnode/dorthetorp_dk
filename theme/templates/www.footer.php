@@ -10,7 +10,7 @@ $menu[] = array("label" => "Om mig", "url" => "/pages/om_mig");
 $menu[] = array("label" => "EFT/TFT", "url" => "/pages/tankefeltterapi");
 $menu[] = array("label" => "Healing", "url" => "/pages/healing");
 $menu[] = array("label" => "Tarotkort", "url" => "/pages/tarotkort");
-$menu[] = array("label" => "Kurser", "url" => "/pages/kurser");
+// $menu[] = array("label" => "Kurser", "url" => "/pages/kurser");
 $menu[] = "separator";
 $menu[] = array("label" => "Priser", "url" => "/pages/priser");
 $menu[] = array("label" => "Anbefalinger", "url" => "/pages/anbefalinger");

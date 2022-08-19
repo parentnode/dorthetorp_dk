@@ -14,9 +14,9 @@ $items = $IC->getItems(array("itemtype" => "post", "status" => 1, "extend" => ar
 
 		<div class="description" itemprop="articleBody">
 			<p>
-				På min klinik i Svendborg og Odense her på Fyn arbejder jeg med <a href="/pages/tankefeltterapi">EFT og TFT</a>
-				samt <a href="/pages/healing">Healing</a> og <a href="/pages/tarotkort">Tarotkort</a>. 
-				I Odense har jeg klinik på Oasen og i Svendborg har jeg klinik på Rolf Krakes Vej.
+				Efter 16 år i det Sydfynske er jeg vendt tilbage til Sjælland, nærmere bestemt København.
+				Jeg vil fra den 1/10 2022 have klinik I Anekset, der er beliggende på H.C. Ørstedsvej 49A, 
+				2000 Frederiksberg.
 			</p>
 			<p>
 				EFT og TFT er effektiv til at afhjælpe Post Traumatisk Stress, angst, forbier, vrede, sorg og svigt. 
