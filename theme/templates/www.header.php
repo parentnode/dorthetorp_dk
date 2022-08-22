@@ -6,7 +6,7 @@
 	<!-- We build websites for good causes – visit parentnode.dk to learn more -->
 	<title><?= $this->pageTitle() ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="keywords" content="Tankefeltterapi Healing Tarotkort Alternativ Behandling Kurser Svendborg Fyn" />
+	<meta name="keywords" content="Tankefeltterapi Healing Tarotkort Alternativ Behandling i København" />
 	<meta name="description" content="<?= $this->pageDescription() ?>" />
 	<meta name="viewport" content="initial-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
