@@ -14,8 +14,8 @@ $this->pageDescription("Clairvoyance er evnen til at opfatte situationer og ople
 	<div class="vcard person" itemscope itemtype="http://schema.org/Person">
 		<div class="name fn" itemprop="name">Dorthe Torp Schines</div>
 		<div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-			<div class="street-address" itemprop="streetAddress">Anekset, H.C. Ørstedsvej 49a</div>
-			<div><span class="postal-code" itemprop="postalCode">2000</span> <span class="locality" itemprop="addressLocality">Frederiksberg</span></div>
+			<div class="street-address" itemprop="streetAddress">Murergade 8</div>
+			<div><span class="postal-code" itemprop="postalCode">2200</span> <span class="locality" itemprop="addressLocality">København N</span></div>
 			<div class="country-name" itemprop="addressCountry">Danmark</div>
 		</div>
 		<div class="tel" itemprop="telephone"><a href="callto:+4570205200">+45 4092 0496</a></div>
