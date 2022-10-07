@@ -15,8 +15,7 @@ $items = $IC->getItems(array("itemtype" => "post", "status" => 1, "extend" => ar
 		<div class="description" itemprop="articleBody">
 			<p>
 				Efter 16 år i det Sydfynske er jeg vendt tilbage til Sjælland, nærmere bestemt København.
-				Jeg vil fra den 1/10 2022 have klinik I Anekset, der er beliggende på H.C. Ørstedsvej 49A, 
-				2000 Frederiksberg.
+				Jeg vil fra den 1/10 2022 have klinik på Murergade 8, 2200 København N.
 			</p>
 			<p>
 				EFT og TFT er effektiv til at afhjælpe Post Traumatisk Stress, angst, forbier, vrede, sorg og svigt. 
