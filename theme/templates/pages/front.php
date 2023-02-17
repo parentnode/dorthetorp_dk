@@ -61,7 +61,7 @@ $items = $IC->getItems(array("itemtype" => "post", "status" => 1, "extend" => ar
 <?	if($items): ?>
 	<ul class="items posts">
 		<? foreach($items as $item): 
-			$media = $IC->sliceMedia($item); ?>
+			$media = $IC->sliceMediae($item); ?>
 		<li class="item article id:<?= $item["item_id"] ?>" itemscope itemtype="http://schema.org/NewsArticle">
 
 			<h3 itemprop="headline"><?= $item["name"] ?></h3>

@@ -1,36 +1,39 @@
+/*
+asset-builder @ 2023-02-17 10:11:45
+*/
 
 /*seg_desktop_include.css*/
 
 /*s-fonts.css*/
 @font-face {
 	font-family: 'OpenSans';
-	src: url('/css/fonts/opensans-regular-webfont.woff') format('woff'),
-		 url('/css/fonts/opensans-regular-webfont.ttf') format('truetype'),
-		 url('/css/fonts/opensans-regular-webfont.svg#OpenSansRegular') format('svg');
+	src: url('fonts/opensans-regular-webfont.woff') format('woff'),
+		 url('fonts/opensans-regular-webfont.ttf') format('truetype'),
+		 url('fonts/opensans-regular-webfont.svg#OpenSansRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'OpenSans';
-	src: url('/css/fonts/opensans-bold-webfont.woff') format('woff'),
-		 url('/css/fonts/opensans-bold-webfont.ttf') format('truetype'),
-		 url('/css/fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+	src: url('fonts/opensans-bold-webfont.woff') format('woff'),
+		 url('fonts/opensans-bold-webfont.ttf') format('truetype'),
+		 url('fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'OpenSans';
-	src: url('/css/fonts/opensans-italic-webfont.woff') format('woff'),
-		 url('/css/fonts/opensans-italic-webfont.ttf') format('truetype'),
-		 url('/css/fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+	src: url('fonts/opensans-italic-webfont.woff') format('woff'),
+		 url('fonts/opensans-italic-webfont.ttf') format('truetype'),
+		 url('fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: 'PT Serif';
-	src: url('/css/fonts/pt_serif-regular-webfont.woff') format('woff'),
-		 url('/css/fonts/pt_serif-regular-webfont.ttf') format('truetype'),
-		 url('/css/fonts/pt_serif-regular-webfont.svg#pt_serifregular') format('svg');
+	src: url('fonts/pt_serif-regular-webfont.woff') format('woff'),
+		 url('fonts/pt_serif-regular-webfont.ttf') format('truetype'),
+		 url('fonts/pt_serif-regular-webfont.svg#pt_serifregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -83,7 +86,7 @@ dd {display: inline-block; vertical-align: top; font-size: 14px; line-height: 1.
 #content .scene {position: relative; padding: 50px 0;}
 #content ul.info {display: none;}
 #header {border-bottom: 1px solid #36543c; text-align: center;
-	background: #355138 url(/img/bg_header.jpg) no-repeat center bottom;
+	background: #355138 url(../img/bg_header.jpg) no-repeat center bottom;
 	background-size: 100% auto; height: 200px;
 }
 #header .servicenavigation {min-width: 600px; display: block; text-align: left; padding-top: 109px;}
