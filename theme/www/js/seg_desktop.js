@@ -1,5 +1,5 @@
 /*
-asset-builder @ 2023-02-17 10:11:45
+asset-builder @ 2023-04-23 10:47:37
 */
 
 /*seg_desktop_include.js*/
@@ -3535,8 +3535,7 @@ if(u.ga_account && !u.cookies_disallowed) {
 }
 
 
-/*i-page.js*/
-u.bug_console_only = true;
+/*m-page.js*/
 Util.Modules["page"] = new function() {
 	this.init = function(page) {
 		u.bug_force = true;
@@ -3583,7 +3582,7 @@ Util.Modules["page"] = new function() {
 u.e.addDOMReadyEvent(u.init);
 
 
-/*i-content.js*/
+/*m-content.js*/
 Util.Modules["front"] = new function() {
 	this.init = function(scene) {
 	}

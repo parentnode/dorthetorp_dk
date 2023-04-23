@@ -1,5 +1,5 @@
 /*
-asset-builder @ 2023-02-17 10:11:45
+asset-builder @ 2023-04-23 10:47:37
 */
 
 /*seg_smartphone_include.js*/
@@ -2296,10 +2296,8 @@ if(u.ga_account && !u.cookies_disallowed) {
 }
 
 
-/*i-page.js*/
-u.bug_force = true;
-u.bug_console_only = true;
-Util.Objects["page"] = new function() {
+/*m-page.js*/
+Util.Modules["page"] = new function() {
 	this.init = function(page) {
 		page.hN = u.qs("#header");
 		page.hN.service = u.qs(".servicenavigation", page.hN);
@@ -2380,8 +2378,8 @@ Util.Objects["page"] = new function() {
 u.e.addDOMReadyEvent(u.init);
 
 
-/*i-content.js*/
-Util.Objects["front"] = new function() {
+/*m-content.js*/
+Util.Modules["front"] = new function() {
 	this.init = function(scene) {
 	}
 }

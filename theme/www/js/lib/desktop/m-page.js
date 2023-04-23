@@ -1,5 +1,3 @@
-u.bug_console_only = true;
-
 Util.Modules["page"] = new function() {
 	this.init = function(page) {
 
