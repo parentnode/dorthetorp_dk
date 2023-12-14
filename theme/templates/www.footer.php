@@ -18,6 +18,7 @@ $menu[] = array("label" => "Kontakt mig", "url" => "/pages/kontakt_mig");
 ?>
 
 	<div id="navigation">
+		<?php /*
 		<ul class="navigation">
 			<?
 				for($i = 0; $i < count($menu); $i++) {
@@ -30,6 +31,7 @@ $menu[] = array("label" => "Kontakt mig", "url" => "/pages/kontakt_mig");
 				}
 			?>
 		</ul>
+		*/ ?>
 	</div>
 
 	<div id="footer">

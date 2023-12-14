@@ -14,8 +14,7 @@ $page->pageTitle("Circle of life - Dorthe Torp - Tankefeltterapi, Healing og Tar
 
 
 $page->page(array(
-	"templates" => "pages/front.php"
-	)
-);
+	"templates" => "pages/temporarily-closed.php"
+));
 
 ?>

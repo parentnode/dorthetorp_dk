@@ -14,6 +14,8 @@ $page->bodyClass("page");
 $page->pageTitle("Circle of life - Dorthe Torp - Tankefeltterapi, Healing og Tarotkort");
 
 
+header("Location: /");
+exit();
 
 if(is_array($action) && count($action)) {
 
