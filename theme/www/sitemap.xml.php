@@ -16,7 +16,7 @@ print '<?xml version="1.0" encoding="UTF-8"?>';
 		<changefreq>weekly</changefreq>
 		<priority>1</priority>
 	</url>
-	<url>
+<? /*	<url>
 		<loc>http://dorthetorp.dk/pages/om_mig</loc>
 		<lastmod><?= date("Y-m-d", filemtime(LOCAL_PATH."/templates/pages/om_mig.php")) ?></lastmod>
 		<changefreq>daily</changefreq>
@@ -63,5 +63,5 @@ print '<?xml version="1.0" encoding="UTF-8"?>';
 		<lastmod><?= date("Y-m-d", filemtime(LOCAL_PATH."/templates/pages/kontakt_mig.php")) ?></lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.7</priority>
-	</url>
+	</url> */ ?>
 </urlset>
